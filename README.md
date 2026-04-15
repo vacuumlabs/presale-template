@@ -6,30 +6,11 @@ See [`AGENTS.md`](AGENTS.md) for the routing map of what lives where and the con
 
 ## Contents
 
-- [Why we are doing this](#why-we-are-doing-this)
-- [Why a GitHub repository (and not a Claude project)](#why-a-github-repository-and-not-a-claude-project)
 - [How to use this repo](#how-to-use-this-repo)
 - [Automating the engagement](#automating-the-engagement)
 - [Setup for non-technical users](#setup-for-non-technical-users)
-
-## Why we are doing this
-
-Client projects generate a lot of context that today lives scattered across Slack, Drive, email, decks, and individual heads. When that context isn't in one place:
-
-- onboarding a new person (or an AI agent) is slow and lossy,
-- decisions get re-litigated because nobody can find the previous answer,
-- questions from the client take hours of archaeology to answer,
-- critical details (a contract clause, an architectural assumption) silently go missing.
-
-Consolidating project knowledge into a single, well-structured, version-controlled place fixes all of that. It also makes the knowledge *queryable* — both humans and LLMs can navigate a predictable folder layout and get grounded answers instead of guesses.
-
-## Why a GitHub repository (and not a Claude project)
-
-We previously kept this material inside a Claude project. Moving it into a Git repository gives us several properties a Claude project can't:
-
-- **Resilience to Claude outages.** The files live outside Claude. If Claude is down or a workspace breaks, the knowledge is still there, still readable, still editable with any tool.
-- **Single folder on disk.** Everything the project needs is in one place — clonable, backupable, greppable — instead of split between a Claude workspace and wherever the "real" files live.
-- **Full change history.** Git records who changed what and when. Every artefact has an audit trail, blame, and the ability to time-travel to a previous state.
+- [Why we are doing this](#why-we-are-doing-this)
+- [Why a GitHub repository (and not a Claude project)](#why-a-github-repository-and-not-a-claude-project)
 
 ## How to use this repo
 
@@ -132,3 +113,22 @@ Two automations in [`.claude/settings.json`](.claude/settings.json) keep you out
 
 - **Auto-sync before every action.** Before Claude edits files or runs shell commands, it silently runs `git fetch` + `git pull --ff-only` so your local copy stays current with GitHub.
 - **Force-push to `master` is blocked.** Claude will refuse to force-push the `master` branch — a force-push can silently delete teammates' work. If you genuinely need one (you almost never do), open `.claude/settings.json` and temporarily remove the guard.
+
+## Why we are doing this
+
+Client projects generate a lot of context that today lives scattered across Slack, Drive, email, decks, and individual heads. When that context isn't in one place:
+
+- onboarding a new person (or an AI agent) is slow and lossy,
+- decisions get re-litigated because nobody can find the previous answer,
+- questions from the client take hours of archaeology to answer,
+- critical details (a contract clause, an architectural assumption) silently go missing.
+
+Consolidating project knowledge into a single, well-structured, version-controlled place fixes all of that. It also makes the knowledge *queryable* — both humans and LLMs can navigate a predictable folder layout and get grounded answers instead of guesses.
+
+## Why a GitHub repository (and not a Claude project)
+
+We previously kept this material inside a Claude project. Moving it into a Git repository gives us several properties a Claude project can't:
+
+- **Resilience to Claude outages.** The files live outside Claude. If Claude is down or a workspace breaks, the knowledge is still there, still readable, still editable with any tool.
+- **Single folder on disk.** Everything the project needs is in one place — clonable, backupable, greppable — instead of split between a Claude workspace and wherever the "real" files live.
+- **Full change history.** Git records who changed what and when. Every artefact has an audit trail, blame, and the ability to time-travel to a previous state.
