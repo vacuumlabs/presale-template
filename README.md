@@ -23,6 +23,40 @@ We previously kept this material inside a Claude project. Moving it into a Git r
 - **Single folder on disk.** Everything the project needs is in one place — clonable, backupable, greppable — instead of split between a Claude workspace and wherever the "real" files live.
 - **Full change history.** Git records who changed what and when. Every artefact has an audit trail, blame, and the ability to time-travel to a previous state.
 
+## How to use this repo
+
+Each client engagement gets its own repository, created from this template via GitHub's **Use this template** button. Once created, follow the kickoff checklist, then use the repo throughout delivery, and archive it at close-out.
+
+### Kickoff checklist
+
+- [ ] Rename the new repo to `<client>-engagement` (or the current team convention) and update its description.
+- [ ] Fill in [`contract/engagement.md`](contract/engagement.md) with client, project code, start date, engagement type (FSFP / T&M), delivery lead, and primary stakeholders.
+- [ ] Configure GitHub access — invite the delivery team and set branch protection on `main` if desired.
+
+### Running the engagement
+
+- Add or update artefacts in the directory that matches their topic; see [`AGENTS.md`](AGENTS.md) for routing and conventions.
+- Claude is the primary interface — it reads and writes the repo directly, using `AGENTS.md` to route questions and ground its answers in the files.
+- Humans can edit via the GitHub web UI, via `git`, or by asking Claude to make the change.
+
+### At close-out
+
+- Archive the repo on GitHub when delivery finishes. History stays intact and read-only.
+
+## Automating the engagement
+
+Every engagement has repetitive work — transcripts to file, status to circulate, inputs to synthesise. Claude Code can automate most of it; what's worth automating depends on *your* bottlenecks, not a predetermined list. Notice where your time goes, then ask Claude to take it over.
+
+**How to start:** describe the job in plain English — *"every morning, pull yesterday's meeting transcripts into `client-inputs/`"* — and Claude will set it up. No need to know how.
+
+**A few ideas to spark your own** (steal what fits, ignore the rest):
+
+- Daily upload of meeting notes and emails into `client-inputs/` so inputs don't stay stuck in someone's inbox.
+- Synthesis of raw transcripts into decisions and action items in the right curated folder.
+- Daily, weekly, or post-meeting digests of what changed — for yourself, the delivery lead, or a Slack channel.
+
+The best automations are the ones you notice yourself. Keep a running list as you go.
+
 ## Setup for non-technical users
 
 This repo is designed to be driven through [Claude Code](https://claude.com/claude-code). You do not need to know git — Claude runs all the git commands for you. You do need a one-time setup so Claude can talk to GitHub on your behalf, and a working mental model of what "commit" and "push" actually do so you can reason about where your files have travelled.
@@ -90,37 +124,3 @@ Two automations in [`.claude/settings.json`](.claude/settings.json) keep you out
 
 - **Auto-sync before every action.** Before Claude edits files or runs shell commands, it silently runs `git fetch` + `git pull --ff-only` so your local copy stays current with GitHub.
 - **Force-push to `master` is blocked.** Claude will refuse to force-push the `master` branch — a force-push can silently delete teammates' work. If you genuinely need one (you almost never do), open `.claude/settings.json` and temporarily remove the guard.
-
-## How to use this repo
-
-Each client engagement gets its own repository, created from this template via GitHub's **Use this template** button. Once created, follow the kickoff checklist, then use the repo throughout delivery, and archive it at close-out.
-
-### Kickoff checklist
-
-- [ ] Rename the new repo to `<client>-engagement` (or the current team convention) and update its description.
-- [ ] Fill in [`contract/engagement.md`](contract/engagement.md) with client, project code, start date, engagement type (FSFP / T&M), delivery lead, and primary stakeholders.
-- [ ] Configure GitHub access — invite the delivery team and set branch protection on `main` if desired.
-
-### Running the engagement
-
-- Add or update artefacts in the directory that matches their topic; see [`AGENTS.md`](AGENTS.md) for routing and conventions.
-- Claude is the primary interface — it reads and writes the repo directly, using `AGENTS.md` to route questions and ground its answers in the files.
-- Humans can edit via the GitHub web UI, via `git`, or by asking Claude to make the change.
-
-### At close-out
-
-- Archive the repo on GitHub when delivery finishes. History stays intact and read-only.
-
-## Automating the engagement
-
-Every engagement has repetitive work — transcripts to file, status to circulate, inputs to synthesise. Claude Code can automate most of it; what's worth automating depends on *your* bottlenecks, not a predetermined list. Notice where your time goes, then ask Claude to take it over.
-
-**How to start:** describe the job in plain English — *"every morning, pull yesterday's meeting transcripts into `client-inputs/`"* — and Claude will set it up. No need to know how.
-
-**A few ideas to spark your own** (steal what fits, ignore the rest):
-
-- Daily upload of meeting notes and emails into `client-inputs/` so inputs don't stay stuck in someone's inbox.
-- Synthesis of raw transcripts into decisions and action items in the right curated folder.
-- Daily, weekly, or post-meeting digests of what changed — for yourself, the delivery lead, or a Slack channel.
-
-The best automations are the ones you notice yourself. Keep a running list as you go.
