@@ -4,6 +4,14 @@ A template repository for running an AI-assisted SDLC against a real client enga
 
 See [`AGENTS.md`](AGENTS.md) for the routing map of what lives where and the conventions for authoring artefacts.
 
+## Contents
+
+- [Why we are doing this](#why-we-are-doing-this)
+- [Why a GitHub repository (and not a Claude project)](#why-a-github-repository-and-not-a-claude-project)
+- [How to use this repo](#how-to-use-this-repo)
+- [Automating the engagement](#automating-the-engagement)
+- [Setup for non-technical users](#setup-for-non-technical-users)
+
 ## Why we are doing this
 
 Client projects generate a lot of context that today lives scattered across Slack, Drive, email, decks, and individual heads. When that context isn't in one place:
