@@ -28,6 +28,13 @@ When a question comes in, identify which artefact category it belongs to and rea
 - **`project-management/`** — roadmaps, timelines, capacity planning, status reports, **project assembly** (outputs and presentations delivered to the client), debriefs, post-mortems.
 - **`client-inputs/`** — meeting notes, user feedback, raw client communications, transcripts.
 
+## Automations configured in this repo
+
+Two `PreToolUse` hooks live in [`.claude/settings.json`](.claude/settings.json) and affect how you should operate here:
+
+- **Auto-sync before state-changing actions.** Before every `Bash`, `Edit`, `Write`, or `NotebookEdit` call, the harness runs `git fetch` + `git pull --ff-only` (silent, non-blocking). Assume the working copy is current; don't add your own pulls.
+- **Force-push to `master` is blocked.** Any `Bash` command containing `git push` together with `--force`, `-f`, or `--force-with-lease` is denied while `master` is checked out. Do not try to work around it — if the user genuinely needs one, ask them to remove the hook temporarily.
+
 ## Conventions
 
 - **Markdown for narrative.** Prefer Markdown for anything authored inside the repo.
