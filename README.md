@@ -110,3 +110,17 @@ Each client engagement gets its own repository, created from this template via G
 ### At close-out
 
 - Archive the repo on GitHub when delivery finishes. History stays intact and read-only.
+
+## Automating the engagement
+
+Every engagement has repetitive work — transcripts to file, status to circulate, inputs to synthesise. Claude Code can automate most of it; what's worth automating depends on *your* bottlenecks, not a predetermined list. Notice where your time goes, then ask Claude to take it over.
+
+**How to start:** describe the job in plain English — *"every morning, pull yesterday's meeting transcripts into `client-inputs/`"* — and Claude will set it up. No need to know how.
+
+**A few ideas to spark your own** (steal what fits, ignore the rest):
+
+- Daily upload of meeting notes and emails into `client-inputs/` so inputs don't stay stuck in someone's inbox.
+- Synthesis of raw transcripts into decisions and action items in the right curated folder.
+- Daily, weekly, or post-meeting digests of what changed — for yourself, the delivery lead, or a Slack channel.
+
+The best automations are the ones you notice yourself. Keep a running list as you go.
