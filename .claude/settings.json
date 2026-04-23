@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "git fetch --quiet 2>/dev/null; git pull --ff-only --quiet 2>/dev/null; exit 0",
+            "command": "git fetch --quiet 2>/dev/null; if [ $? -eq 0 ]; then git pull --ff-only --quiet 2>/dev/null || printf '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"Your copy is out of sync — someone has pushed to origin since you last synced. Ask Claude: pull and rebase my working copy.\"}}'; fi; exit 0",
             "timeout": 15,
             "statusMessage": "Syncing with origin…"
           }
@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "command -v jq >/dev/null 2>&1 || exit 0; INPUT=$(cat); cmd=$(printf '%s' \"$INPUT\" | jq -r '.tool_input.command // \"\"'); branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null); [ \"$branch\" = \"master\" ] || exit 0; case \"$cmd\" in *\"git push\"*) case \"$cmd\" in *\" --force\"*|*\" -f \"*|*\" -f\") printf '%s' '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"Force-push to master is blocked by a repo guard hook. Push to a branch or remove the --force flag.\"}}';; esac ;; esac; exit 0",
+            "command": "command -v jq >/dev/null 2>&1 || exit 0; INPUT=$(cat); cmd=$(printf '%s' \"$INPUT\" | jq -r '.tool_input.command // \"\"'); branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null); [ \"$branch\" = \"master\" ] || exit 0; case \"$cmd\" in *\"git push\"*) case \"$cmd\" in *\"--force-with-lease\"*) exit 0;; *\" --force\"*|*\" -f \"*|*\" -f\") printf '%s' '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"Force-push to master is blocked by a repo guard hook. Push to a branch or remove the --force flag.\"}}';; esac ;; esac; exit 0",
             "timeout": 10,
             "statusMessage": "Checking force-push guard…"
           }

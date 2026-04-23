@@ -251,7 +251,7 @@ Takes about five minutes. Ask Claude Code for each step:
 5. At [github.com/settings/ssh/new](https://github.com/settings/ssh/new), paste, name the key, save.
 6. *"Test my SSH connection to GitHub."* — expect `Hi <username>! You've successfully authenticated…`.
 
-After this, every `push` / `pull` just works.
+After this, every `push` / `pull` just works. If you see `Permission denied (publickey)` at any point, ask Claude: *"My SSH connection to GitHub is failing — diagnose it."*
 
 ### 3. Get a project onto your laptop
 
@@ -279,6 +279,7 @@ Lifecycle: **edit → commit → push**. Usually: *"commit and push this."*
 | --- | --- | --- |
 | Edited, not committed | Yes, cleanly | *"Undo my uncommitted changes to `<file>`."* |
 | Committed, not pushed | Yes, cleanly | *"Revert the last commit"* / *"Remove `<file>` from the last commit."* |
+| Push rejected (someone pushed first) | Yes | *"My push was rejected — pull and push my changes."* |
 | Pushed | Yes, but the original stays in history | *"Revert the last commit and push the revert."* Claude adds a new commit undoing the old one; history is preserved (feature, not bug). |
 | Committed a secret | **Permanent in history.** Rotate first. | Rotate the secret, then ask Claude to remove the file. Assume it's been seen. |
 
