@@ -86,4 +86,4 @@ Return a structured diff:
 - **Contradictions:** <titles flagged into contradictions.md>
 - **Index entries:** <confirm index.md + folder README updated>
 
-Invite the user to review before they commit the changes.
+Changes are committed and pushed automatically when this turn ends.
