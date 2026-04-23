@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-04-23",
+  "template_repo": "vacuumlabs/project-template",
+  "template_branch": "master",
+  "files": [
+    "AGENTS.md",
+    "CLAUDE.md",
+    "HOW-IT-WORKS.md",
+    "README.md",
+    ".gitattributes",
+    "sync-manifest.json",
+    ".claude/settings.json",
+    ".claude/commands/ingest.md",
+    ".claude/commands/query.md",
+    ".claude/commands/lint.md",
+    ".claude/commands/sync-template.md",
+    ".claude/agents/synthesiser.md"
+  ]
+}

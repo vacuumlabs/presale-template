@@ -13,6 +13,7 @@ A companion to [`README.md`](README.md). The README tells you *what to do*; this
 - [Page metadata](#page-metadata)
 - [Scaffolding wiki pages at kickoff](#scaffolding-wiki-pages-at-kickoff)
 - [The revert principle](#the-revert-principle)
+- [Propagating template updates to live engagements](#propagating-template-updates-to-live-engagements)
 - [On the roadmap](#on-the-roadmap)
 
 ## The problem it solves
@@ -109,6 +110,61 @@ Claude creates empty pages with the right metadata and leaves `TODO` bodies for 
 ## The revert principle
 
 The README's revert table covers the common situations. The underlying rule: **the further a change has travelled (working copy → commit → pushed), the more work it takes to undo.** Catching mistakes before `push` is always cheaper. For secrets this is not just a convenience rule — it's the difference between "rotate later" and "rotate now, assume it's been seen."
+
+## Propagating template updates to live engagements
+
+GitHub's "Use as Template" copies the template once and then forgets — the downstream engagement repo has no git relationship to `vacuumlabs/project-template`. This means schema improvements made here (new hooks, updated commands, new merge drivers) don't reach existing engagements unless someone pulls them in deliberately.
+
+### The `/sync-template` command
+
+Every template-derived repo inherits `.claude/commands/sync-template.md`. In any downstream repo, a user runs:
+
+```
+/sync-template
+```
+
+Claude fetches the current `sync-manifest.json` from the template's public raw URL, compares versions, diffs every file listed in the manifest, presents a summary, and applies updates **only after explicit user confirmation**. Engagement content is never touched.
+
+### What syncs, what stays put
+
+The `sync-manifest.json` at the repo root is the authoritative list of schema-layer files:
+
+- `AGENTS.md`, `CLAUDE.md`, `HOW-IT-WORKS.md`, `README.md` — routing, schema, design docs.
+- `.gitattributes` — merge drivers for append-only files.
+- `.claude/settings.json` — shared hooks (auto-sync, force-push guard, auto-commit).
+- `.claude/commands/*.md` — all slash commands.
+- `.claude/agents/*.md` — all subagents.
+- `sync-manifest.json` itself — so the version marker advances in lockstep.
+
+Everything else is engagement content and is never touched by sync:
+
+- `client-inputs/`, `team-inputs/`
+- Wiki folders (`contract/`, `product-management/`, `technical-architecture/`, `project-management/`, `deal-context/`)
+- `index.md`, `log.md`, `decisions.md`, `contradictions.md`
+- `.claude/settings.local.json` — per-machine permissions and MCP connectors
+
+### Versioning
+
+Semver, stored in `sync-manifest.json`, bumped **manually** when the template maintainer ships a schema change. The local repo's manifest records the version it's currently on. Comparing the two numbers tells you at a glance whether you've drifted. The manual bump is a feature, not a bug — it forces the template maintainer to pause at commit time and ask *"is this worth a sync?"*, so downstream engagements don't get nagged by noise-level changes.
+
+### Why pull, not push
+
+The sync is pull-based: downstream repos ask the template for updates, not the other way around. The alternative (a GitHub Action that opens PRs to every downstream repo) was considered and rejected — it requires a maintained subscriber list, a permissions setup per downstream, and a PAT with write access to every engagement repo. Pull-based keeps the template repo passive and keeps the downstream repo in control.
+
+The trade-off is that engagements that never run `/sync-template` drift silently. Mitigate with:
+
+- A calendar reminder on engagement kickoff ("run /sync-template monthly").
+- Eventually, `/lint` can surface the version gap as part of its weekly report.
+
+### When the downstream has customised a schema file
+
+The sync detects the diff and surfaces it to the user with the other changes — it does not silently overwrite. The user chooses per file: keep local, take template, or cancel and reconcile manually.
+
+If you expect to diverge from the template's schema for good reason (a client needs a bespoke hook, a command variant lives only here), keep those customisations in `.claude/settings.local.json` or in a new command file not listed in `sync-manifest.json`. Anything outside the manifest is never touched by sync.
+
+### Bootstrapping engagements created before sync existed
+
+Repos created from the template before `/sync-template` landed won't have the command. One-time bootstrap: in the downstream repo, ask Claude *"fetch `.claude/commands/sync-template.md` and `sync-manifest.json` from `vacuumlabs/project-template` and save them locally."* From that point `/sync-template` is available and keeps the repo in sync automatically.
 
 ## On the roadmap
 
