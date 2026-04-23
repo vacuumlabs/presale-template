@@ -1,0 +1,5 @@
+# Append-only index files — union merge takes both sides, order doesn't matter
+log.md                  merge=union
+index.md                merge=union
+contradictions.md       merge=union
+decisions.md            merge=union
