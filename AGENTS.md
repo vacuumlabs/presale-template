@@ -78,7 +78,7 @@ Additional fields, used where relevant:
 Two files drive discovery. Both live at the repo root.
 
 - [`index.md`](./index.md) — categorised catalogue of every wiki page. Claude reads this first when answering any question.
-- [`log.md`](./log.md) — append-only audit trail. Format: `## [YYYY-MM-DD HH:MM] <verb> | <title>` followed by one or two sentences. Verbs: `ingest`, `query`, `lint`, `decision`, `author`.
+- [`log.md`](./log.md) — append-only audit trail of material wiki-changing events. Format: `## [YYYY-MM-DD HH:MM] <verb> | <title>` followed by one or two sentences. Verbs: `ingest`, `lint`, `decision`, `contradiction`, `author`, `query`. Routine queries do **not** log — only decisions/contradictions surfaced during a query (and confirmed by the user) land here. Ingests always log; the log entry summarises any decisions or contradictions confirmed in the same ingest. `query` is an escape-hatch verb for when the user explicitly asks to record a query.
 
 Two cross-cutting pages also live at the root.
 

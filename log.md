@@ -1,10 +1,18 @@
 # Log
 
-Append-only audit trail of wiki operations. Newest entries at the bottom.
+Append-only audit trail of **material wiki-changing events**. Newest entries at the bottom.
 
 **Format:** `## [YYYY-MM-DD HH:MM] <verb> | <title>` followed by one or two sentences describing what changed and which pages were touched.
 
-Verbs: `ingest`, `query`, `lint`, `decision`, `author`.
+**Verbs:** `ingest`, `lint`, `decision`, `contradiction`, `author`, `query`.
+
+**When entries land here:**
+
+- `ingest` — every `/ingest` run (always logged; summarises pages, decisions, contradictions touched).
+- `lint` — every `/lint` run.
+- `decision` / `contradiction` — when a query or ingest surfaces one and the user confirms saving it. The entry is in addition to the `/ingest` log entry only for queries; ingests fold these into their own entry.
+- `author` — when a `team-inputs/` file is authored or materially revised.
+- `query` — rare. Only when the user explicitly asks to record a query. Routine Q&A does **not** log.
 
 ---
 

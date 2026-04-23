@@ -49,9 +49,9 @@ status: draft | active | approved | superseded
 
 Typical ingest touches 5–15 pages. Every factual claim on a wiki page links back to at least one raw source.
 
-## 4. Flag contradictions
+## 4. Flag contradictions (gated on user confirmation)
 
-If the source conflicts with claims in existing wiki pages, append a block to [`contradictions.md`](../../contradictions.md) with:
+If the source conflicts with claims in existing wiki pages, present each conflict to the user and ask whether to record it. On confirmation, append a block to [`contradictions.md`](../../contradictions.md) with:
 
 - **Claim A** (existing wiki page + link)
 - **Claim B** (new source + link)
@@ -60,7 +60,9 @@ If the source conflicts with claims in existing wiki pages, append a block to [`
 - **Resolution:** `?` (stub)
 - **First flagged:** today
 
-A contradiction between a `team-inputs/` file and a `client-inputs/` file is almost always a discovery finding worth raising explicitly.
+A contradiction between a `team-inputs/` file and a `client-inputs/` file is almost always a discovery finding worth raising explicitly — but still ask before persisting.
+
+If the ingest also produces a **decision** worth recording, apply the same pattern: present it, ask, and on confirmation append to [`decisions.md`](../../decisions.md).
 
 ## 5. Update indexes
 
@@ -69,13 +71,15 @@ A contradiction between a `team-inputs/` file and a `client-inputs/` file is alm
 
 ## 6. Append to log.md
 
-Append to [`log.md`](../../log.md):
+Every ingest is a material wiki-changing event and is always logged. Append to [`log.md`](../../log.md):
 
 ```
 ## [YYYY-MM-DD HH:MM] ingest | <source title>
 
-<1–2 sentence summary of what changed: pages created, pages updated, contradictions flagged>
+<1–2 sentence summary of what changed: pages created, pages updated, contradictions confirmed, decisions confirmed.>
 ```
+
+The contradictions and decisions confirmed in step 4 are summarised inside this entry — do not add separate `contradiction` / `decision` entries for them.
 
 ## 7. Report back
 

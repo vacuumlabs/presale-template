@@ -37,16 +37,23 @@ If the answer is likely to be re-asked, ask the user whether to save it as a new
 
 This is how the wiki compounds — query outputs become wiki pages.
 
-## 5. Flag anything you noticed
+## 5. Persist decisions and contradictions (gated on user confirmation)
 
-If while answering you spotted a contradiction, an orphan page, or a missing wiki page that would have made this query faster, raise it. For contradictions, offer to append to [`contradictions.md`](../../contradictions.md).
+If while answering you surfaced:
 
-## 6. Append to log.md
+- **A decision worth recording** — present it to the user and ask whether to save it. On confirmation, append to [`decisions.md`](../../decisions.md) **and** append a `decision` entry to [`log.md`](../../log.md).
+- **A contradiction worth flagging** — present both sides to the user and ask whether to record it. On confirmation, append to [`contradictions.md`](../../contradictions.md) **and** append a `contradiction` entry to [`log.md`](../../log.md).
 
-Append to [`log.md`](../../log.md):
+Log entry format:
 
 ```
-## [YYYY-MM-DD HH:MM] query | <one-line summary of question>
+## [YYYY-MM-DD HH:MM] decision | <one-line summary>
 
-<If refiled, link to the new page.>
+<1–2 sentence context; link to the relevant decisions.md / contradictions.md block.>
 ```
+
+Also raise (but don't persist) any orphan pages or missing wiki pages you noticed — these are signals for `/lint`.
+
+## 6. No log entry for routine queries
+
+A pure read-only query does **not** touch `log.md`. The log tracks material knowledge-state changes, not every lookup. If the user explicitly asks *"log this query"* (rare), use the `query` verb with the same entry format as above.
