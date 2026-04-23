@@ -29,7 +29,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "git add -A 2>/dev/null; git diff --cached --quiet || git commit -m \"Auto-commit: wiki updates\" --quiet 2>/dev/null; git push --quiet 2>/dev/null || (git pull --rebase --quiet 2>/dev/null && git push --quiet 2>/dev/null); exit 0",
+            "command": "git add -A 2>/dev/null; if ! git diff --cached --quiet; then MSG=$(git diff --cached --name-only 2>/dev/null | sed 's|/.*||' | sort -u | tr '\\n' ', ' | sed 's/, $//'); git commit -m \"wiki: ${MSG:-updates}\" --quiet 2>/dev/null; fi; git push --quiet 2>/dev/null || (git pull --rebase --quiet 2>/dev/null && git push --quiet 2>/dev/null); exit 0",
             "timeout": 30,
             "statusMessage": "Saving changes to GitHub…"
           }
