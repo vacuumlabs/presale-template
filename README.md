@@ -242,24 +242,31 @@ From here on, every instruction in this README that says *"ask Claude Code …"*
 
 ### 2. Passwordless GitHub access (one-time per laptop)
 
-Takes about five minutes. Ask Claude Code for each step:
+Takes about five minutes. Ask Claude Code for each step — **follow Claude's instructions as they appear, then come back here for the next step**:
 
-1. *"Do I already have an SSH key for GitHub?"* — Claude checks `~/.ssh/`. If one exists, skip to step 4.
+1. *"Do I already have an SSH key for GitHub?"* — Claude checks `~/.ssh/`. If one exists, skip to step 5.
 2. *"Generate an SSH key using my work email."* — empty passphrase is fine on a work laptop.
 3. *"Add my SSH key to the macOS keychain."*
 4. *"Print my SSH public key and copy it to the clipboard."*
-5. At [github.com/settings/ssh/new](https://github.com/settings/ssh/new), paste, name the key, save.
+5. At [github.com/settings/ssh/new](https://github.com/settings/ssh/new), paste the key, give it a name (e.g. `Work MacBook`), and save.
 6. *"Test my SSH connection to GitHub."* — expect `Hi <username>! You've successfully authenticated…`.
+
+> **Note:** When you run step 2, Claude may itself suggest going to GitHub to paste the key — that's step 5. Follow along, then return here and continue from step 6 to verify the connection.
 
 After this, every `push` / `pull` just works. If you see `Permission denied (publickey)` at any point, ask Claude: *"My SSH connection to GitHub is failing — diagnose it."*
 
 ### 3. Get a project onto your laptop
 
-On GitHub, **Code → SSH**, copy the URL. In the Claude app, point Claude Code at a working folder (e.g. `~/work/`) and ask: *"Clone `git@github.com:vacuumlabs/<repo>.git` here and open it."*
+On GitHub, open the repo → **Code → SSH**, and copy the URL. Then, in the Claude app:
+
+1. Click the **`+`** button (top-left of the Claude Code panel) to start a new project.
+2. When prompted to choose a folder, navigate to your working directory (e.g. `~/work/`) and select it.
+3. Ask: *"Clone `git@github.com:vacuumlabs/<repo>.git` here and open it."*
+4. Once cloning finishes, click **`+`** again, navigate into the newly-cloned folder (e.g. `~/work/project-qcp-kb/`), and select it. This sets it as the active working context.
 
 New project from this template: *"Create a new repo from `vacuumlabs/project-template` named `<client>-engagement`, clone it here, and walk me through the kickoff checklist."*
 
-After cloning, switch Claude Code's folder to the newly-cloned project. That's the working context for every interaction described in this README.
+> **Each time you open a new chat**, check the folder shown in the top-left of the Claude Code panel — it should show the project repo, not a previous project. If it's wrong, click `+` and re-select the correct folder before asking anything.
 
 ### 4. Commit and push, in plain English
 
