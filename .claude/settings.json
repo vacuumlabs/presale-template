@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "git fetch --quiet 2>/dev/null; if [ $? -eq 0 ]; then git pull --ff-only --quiet 2>/dev/null || printf '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"Your copy is out of sync — someone has pushed to origin since you last synced. Ask Claude: pull and rebase my working copy.\"}}'; fi; exit 0",
+            "command": "git fetch --quiet 2>/dev/null; BEHIND=$(git rev-list --count HEAD..@{u} 2>/dev/null); if [ \"${BEHIND:-0}\" -gt 0 ]; then git pull --ff-only --quiet 2>/dev/null || printf '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"Your copy is out of sync — someone has pushed to origin since you last synced. Ask Claude: pull and rebase my working copy.\"}}'; fi; exit 0",
             "timeout": 15,
             "statusMessage": "Syncing with origin…"
           }
