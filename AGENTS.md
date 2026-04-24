@@ -21,7 +21,7 @@ This repo has three layers. Every file belongs to exactly one of them.
 | Contract terms, MD budget, commercials, SOW, billing, legal, engagement metadata | [`contract/`](contract/) |
 | Sales context, account management, client sentiment, client motivation, stakeholder map, target audience | [`deal-context/`](deal-context/) |
 | System design, architecture diagrams, tech stack decisions, ADRs, ARB records, integrations | [`technical-architecture/`](technical-architecture/) |
-| Personas, PRDs, user journeys, feature maps, product strategy, domain & competitive briefs, problem framing, competitor analysis | [`product-management/`](product-management/) |
+| Problem framing, problem statement, product strategy, value proposition, business case, user research, user pain points, market research, business research, user testing, product analysis, benchmarking, competitive analysis, personas, PRDs, user journeys, use cases, service blueprint, UX flows, product flows, feature map, feature list, feature prioritisation, MVP scope, product scope, product phasing, product roadmap | [`product-management/`](product-management/) |
 | Roadmaps, timelines, milestones, capacity planning, status reports, project assembly, debriefs, post-mortems, scope definition, work breakdown, estimates, assumptions, change requests | [`project-management/`](project-management/) |
 | Meeting notes, user feedback, raw client communications, transcripts | [`client-inputs/`](client-inputs/) |
 | Team-authored raw material (PO personas, architect sketches, workshop outputs, BD debriefs, estimate assumptions) | [`team-inputs/`](team-inputs/) |
