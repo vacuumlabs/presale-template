@@ -8,4 +8,8 @@ When the user asks a substantive question about the project — client, scope, a
 
 Meta-questions — about this repo's structure, the tooling itself, the demo flow, how to run something, or casual conversation — do **not** trigger the wiki workflow. Answer those directly.
 
+## External skills and integrations
+
+For project questions, **do not invoke external skills** (Slack, Jira, Confluence, Gmail, Google Drive, or any other MCP-backed integration) unless the user explicitly asks you to. Go directly to `index.md` and the wiki workflow instead. External skills may be used to answer sub-parts of a question when you judge the wiki lacks the needed information and the user would clearly benefit — but the wiki is always the first stop, and reaching out to external systems is the exception, not the default.
+
 When in doubt, ask.
