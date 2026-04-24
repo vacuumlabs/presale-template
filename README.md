@@ -259,7 +259,7 @@ After this, every `push` / `pull` just works. If you see `Permission denied (pub
 
 On GitHub, open the repo → **Code → SSH**, and copy the URL. Then, in the Claude app:
 
-1. Click the **`+`** button (top-left of the Claude Code panel) to start a new project.
+1. Click the **`+`** button (top-left of the Claude Code panel) to start a new session.
 2. When prompted to choose a folder, navigate to your working directory (e.g. `~/work/`) and select it.
 3. Ask: *"Clone `git@github.com:vacuumlabs/<repo>.git` here and open it."*
 4. Once cloning finishes, click **`+`** again, navigate into the newly-cloned folder (e.g. `~/work/project-qcp-kb/`), and select it. This sets it as the active working context.
