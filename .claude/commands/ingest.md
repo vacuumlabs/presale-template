@@ -76,8 +76,13 @@ Every ingest is a material wiki-changing event and is always logged. Append to [
 ```
 ## [YYYY-MM-DD HH:MM] ingest | <source title>
 
-<1–2 sentence summary of what changed: pages created, pages updated, contradictions confirmed, decisions confirmed.>
+<one sentence describing the source and the overall scope of changes>
+- Created: <page> — <one phrase on what it covers>
+- Updated: <page> — <what changed>
+- Contradictions: <title> (or "none")
 ```
+
+Use bullets when 3 or more pages were touched; collapse to prose for smaller ingests (1–2 pages).
 
 **Important — append only at the true end of the file.** When using an edit tool that works by find-and-replace, anchor on the **last line of existing content** (the final sentence of the previous log entry), not on the previous entry's `##` heading. Anchoring on a heading and prepending the new block before it inserts the entry in the wrong position.
 
@@ -91,5 +96,6 @@ Return a structured diff:
 - **Updated:** <list of existing pages touched>
 - **Contradictions:** <titles flagged into contradictions.md>
 - **Index entries:** <confirm index.md + folder README updated>
+- **Missing attachments:** <any files referenced in the source that could not be retrieved — name each one, explain why it's missing, and tell the user what to do, e.g. "please share the file directly">
 
 Changes are committed and pushed automatically when this turn ends.
