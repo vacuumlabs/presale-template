@@ -79,6 +79,8 @@ Every ingest is a material wiki-changing event and is always logged. Append to [
 <1–2 sentence summary of what changed: pages created, pages updated, contradictions confirmed, decisions confirmed.>
 ```
 
+**Important — append only at the true end of the file.** When using an edit tool that works by find-and-replace, anchor on the **last line of existing content** (the final sentence of the previous log entry), not on the previous entry's `##` heading. Anchoring on a heading and prepending the new block before it inserts the entry in the wrong position.
+
 The contradictions and decisions confirmed in step 4 are summarised inside this entry — do not add separate `contradiction` / `decision` entries for them.
 
 ## 7. Report back
