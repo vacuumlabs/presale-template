@@ -67,6 +67,7 @@ If the ingest also produces a **decision** worth recording, apply the same patte
 ## 5. Update indexes
 
 - Add or update the source's entry in the `## Index` section of its raw-input folder's README (`client-inputs/README.md` or `team-inputs/README.md`).
+- For every wiki folder where a page was created, renamed, or removed, update that folder's `README.md` index.
 - Add any new wiki pages to the categorised list in the root [`index.md`](../../index.md).
 
 ## 6. Append to log.md
