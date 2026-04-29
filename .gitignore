@@ -1,2 +1,5 @@
-# JetBrains IDE metadata
+# IDE
 .idea/
+
+# Claude Code local settings (machine-specific permissions and paths)
+.claude/settings.local.json

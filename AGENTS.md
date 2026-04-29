@@ -11,7 +11,7 @@ This repo has three layers. Every file belongs to exactly one of them.
 1. **Raw sources (immutable by default).**
    - [`client-inputs/`](./client-inputs/) — material from the customer (transcripts, RFPs, emails, annexes, decks they sent).
    - [`team-inputs/`](./team-inputs/) — primary material we authored ourselves (PO personas, architect sketches, workshop outputs, BD debriefs, estimate assumptions).
-2. **Wiki (LLM-owned).** The six topical folders below. Claude creates and maintains these pages by synthesising across the raw layer. Humans may edit but should prefer asking Claude, so `index.md` and `log.md` stay in sync.
+2. **Wiki (LLM-owned).** The five topical folders below. Claude creates and maintains these pages by synthesising across the raw layer. Humans may edit but should prefer asking Claude, so `index.md` and `log.md` stay in sync.
 3. **Schema.** This file (`AGENTS.md`) defines routing, operations, metadata, and the edit contract. Claude reads it every session.
 
 ## Routing

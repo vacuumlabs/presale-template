@@ -49,7 +49,7 @@ Every file in this repo belongs to exactly one of three layers, and the layer di
 | Layer | Where | Who writes | Who edits |
 | --- | --- | --- | --- |
 | **Raw** | `client-inputs/`, `team-inputs/` | Customer or team member | See next section |
-| **Wiki** | the six topical folders | Claude, synthesised from raw | Claude continuously; humans may edit but should prefer asking Claude so indexes stay in sync |
+| **Wiki** | the five topical folders | Claude, synthesised from raw | Claude continuously; humans may edit but should prefer asking Claude so indexes stay in sync |
 | **Schema** | `AGENTS.md`, `CLAUDE.md` | Repo maintainer | Rarely — changes the contract |
 
 The **schema** layer is worth isolating: `AGENTS.md` defines routing, operations, metadata, and the edit contract Claude follows every session. `CLAUDE.md` routes substantive project questions through the wiki workflow. Editing these changes how every future ingest and answer behaves, so they are explicitly maintainer-scoped rather than day-to-day edits.
@@ -131,6 +131,7 @@ The `sync-manifest.json` at the repo root is the authoritative list of schema-la
 
 - `AGENTS.md`, `CLAUDE.md`, `HOW-IT-WORKS.md`, `README.md` — routing, schema, design docs.
 - `.gitattributes` — merge drivers for append-only files.
+- `.gitignore` — ignore patterns for IDE metadata and per-machine Claude settings.
 - `.claude/settings.json` — shared hooks (auto-sync, force-push guard, auto-commit).
 - `.claude/commands/*.md` — all slash commands.
 - `.claude/agents/*.md` — all subagents.
