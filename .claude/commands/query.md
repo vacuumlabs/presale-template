@@ -9,6 +9,10 @@ Question: **$ARGUMENTS**
 
 Follow this workflow.
 
+## 0. Sync with origin
+
+Before reading anything, run `git pull --ff-only --quiet` to pick up any pushes from teammates. If the pull fails (non-fast-forward, conflicts, network error), stop and ask the user to resolve before continuing.
+
 ## 1. Read the index first
 
 Open [`index.md`](../../index.md). It's the map. Identify which wiki pages are likely relevant before you do any broader search.
@@ -33,7 +37,7 @@ If the answer is likely to be re-asked, ask the user whether to save it as a new
 
 - Propose the target folder (see [`AGENTS.md`](../../AGENTS.md) routing).
 - Propose the filename and metadata.
-- On confirmation, write the page and update [`index.md`](../../index.md).
+- On confirmation, write the page and update **both** the root [`index.md`](../../index.md) **and** the parent folder's `README.md` `## Index` section (per the two-level index rule in [`AGENTS.md`](../../AGENTS.md)).
 
 This is how the wiki compounds — query outputs become wiki pages.
 

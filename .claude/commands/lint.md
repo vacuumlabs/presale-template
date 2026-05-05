@@ -4,9 +4,13 @@ description: Health-check the wiki — contradictions, stale pages, orphans, ind
 
 # Lint the wiki
 
-Produce a report at `project-management/YYYY-MM-DD-lint-report.md`. Do not silently "fix" issues — list them and ask the user before acting.
+Produce a report at `project-management/lint-reports/YYYY-MM-DD-lint-report.md`. Do not silently "fix" issues — list them and ask the user before acting.
 
 Run the following checks.
+
+## 0. Sync with origin
+
+Before scanning anything, run `git pull --ff-only --quiet` to pick up any pushes from teammates. If the pull fails (non-fast-forward, conflicts, network error), stop and ask the user to resolve before continuing.
 
 ## 1. Unresolved contradictions
 
@@ -52,7 +56,7 @@ Wiki pages missing required metadata fields (`type`, `title`, `sources`, `last_u
 
 ## Output
 
-Write the report to `project-management/YYYY-MM-DD-lint-report.md` with one section per check above. Each finding should be one bullet, with a link to the affected page.
+Write the report to `project-management/lint-reports/YYYY-MM-DD-lint-report.md` with one section per check above. Each finding should be one bullet, with a link to the affected page.
 
 At the top of the report, add a one-paragraph summary: *N stale, M orphans, P contradictions unresolved, Q missing wiki pages.*
 

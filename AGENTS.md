@@ -89,7 +89,7 @@ Two cross-cutting pages also live at the root.
 
 Two `PreToolUse` hooks live in [`.claude/settings.json`](.claude/settings.json):
 
-- **Auto-sync before state-changing actions.** Before every `Bash`, `Edit`, `Write`, or `NotebookEdit` call, the harness runs `git fetch` + `git pull --ff-only` (silent, non-blocking). Assume the working copy is current; don't add your own pulls.
+- **Auto-sync before state-changing actions.** Before every `Edit`, `Write`, or `NotebookEdit` call, the harness runs `git fetch` + `git pull --ff-only` (silent, non-blocking). Assume the working copy is current; don't add your own pulls.
 - **Force-push to `master` is blocked.** Any `Bash` command containing `git push` together with `--force`, `-f`, or `--force-with-lease` is denied while `master` is checked out. Don't try to work around it — if the user genuinely needs one, ask them to remove the hook temporarily.
 
 Optional automations users may add (see the root README):
@@ -105,6 +105,11 @@ Optional automations users may add (see the root README):
 - **External systems: snapshot + link.** Decision-grade artefacts that live in Jira, Confluence, Drive or similar (signed SOW, approved PRD, architecture diagrams) should be snapshotted into the repo *and* linked back to the source. Non-decision-grade material can be pointer-only.
 - **Engagement metadata.** Canonical engagement metadata lives in [`contract/engagement.md`](contract/engagement.md).
 - **Place by primary question.** When adding a new artefact, put it in the directory that matches the *primary* question it answers, even if it touches several.
+- **Two-level index maintenance (required).** Any wiki page that is created, renamed, or removed must be reflected in **both** the root [`index.md`](./index.md) **and** the parent folder's `README.md` `## Index` section. Applies whether the change came from `/ingest`, a `/query` refile, or direct authoring.
 - **Metadata on every wiki page and every `team-inputs/` file.** See the schema above.
-- **Prose over bullets on wiki pages.** Use prose paragraphs. Tables only when the content is inherently tabular. Follows the project's house style.
+- **Prose over bullets on wiki pages.** Use prose paragraphs for narrative, reasoning, and context. Two exceptions where structure beats prose:
+  - **Tables** when the content is inherently tabular (parallel attributes across multiple items).
+  - **Bullet lists** when enumerating named concepts, defined terms, options, or steps — anything where each item is a discrete unit with its own label. A glossary-style list of `**Term** — definition.` bullets is clearer than the same items inlined into a sentence with semicolons. If you find yourself writing "The key concepts are: X — …; Y — …; Z — …", that's the signal to break it into bullets.
+
+  Follows the project's house style.
 - **Cite or say the gap.** Every factual claim on a wiki page should link back to at least one raw source. If a claim isn't sourced, flag it — don't smooth it over.

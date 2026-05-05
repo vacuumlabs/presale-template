@@ -8,6 +8,10 @@ Pulls the latest schema-layer updates (hooks, slash commands, subagents, routing
 
 Follow this workflow exactly. Do not skip steps.
 
+## 0. Sync with origin
+
+Before doing anything else, run `git pull --ff-only --quiet` to pick up any pushes from teammates. If the pull fails (non-fast-forward, conflicts, network error), stop and ask the user to resolve before continuing.
+
 ## 1. Guard the working tree
 
 Run `git status --porcelain`. If it returns anything, **abort** with:

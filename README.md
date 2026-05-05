@@ -134,7 +134,7 @@ If the file is already on disk, you can also call `/ingest <path>` explicitly �
 
 **Ask the wiki** — just ask in plain English. Substantive project questions auto-follow a fixed workflow: read `index.md` first, drill into the relevant wiki pages, answer **with citations**, and — if the answer is likely to be re-asked — offer to refile it as a new page. If the wiki lacks the information, Claude says so. Meta-questions about the tooling are answered directly.
 
-**`/lint`** — weekly health check. Scans for unresolved contradictions, stale pages (`last_updated` >14 days on active engagements), orphan pages, missing wiki pages (entities mentioned 3+ times with no page), index drift, provenance holes, binary-companion gaps, overdue TODOs, invalid metadata. Output lands at `project-management/YYYY-MM-DD-lint-report.md`.
+**`/lint`** — weekly health check. Scans for unresolved contradictions, stale pages (`last_updated` >14 days on active engagements), orphan pages, missing wiki pages (entities mentioned 3+ times with no page), index drift, provenance holes, binary-companion gaps, overdue TODOs, invalid metadata. Output lands at `project-management/lint-reports/YYYY-MM-DD-lint-report.md`.
 
 Routing lives in [`CLAUDE.md`](CLAUDE.md); full operation details in [`HOW-IT-WORKS.md`](HOW-IT-WORKS.md#how-claude-keeps-the-wiki-synced).
 

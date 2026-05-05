@@ -24,7 +24,7 @@ Roadmaps, timelines, milestones, capacity planning, status reports, project asse
 - `out-of-scope.md` — explicit list of things we are *not* doing, with rationale
 - `open-questions.md` — unresolved product / scope questions (usually PO-owned; promote to `../contradictions.md` when they conflict with existing wiki content)
 
-`/lint` reports land here as `YYYY-MM-DD-lint-report.md`.
+`/lint` reports land in [`lint-reports/`](./lint-reports/) as `YYYY-MM-DD-lint-report.md`.
 
 ## Index
 

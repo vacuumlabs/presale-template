@@ -9,6 +9,10 @@ Path to ingest: **$ARGUMENTS**
 
 Follow this workflow exactly. Do not skip steps.
 
+## 0. Sync with origin
+
+Before reading anything, run `git pull --ff-only --quiet` to pick up any pushes from teammates. If the pull fails (non-fast-forward, conflicts, network error), stop and ask the user to resolve before continuing.
+
 ## 1. Read and classify
 
 Read the source file at `$ARGUMENTS`.
@@ -27,6 +31,18 @@ Before touching any wiki pages, surface to the user:
 - Any contradictions you spotted with existing wiki pages.
 
 Ask the user which entities to expand into wiki pages and which to leave as passing mentions. Do not assume.
+
+### 2a. Confirm unknown people
+
+When ingesting transcripts or Slack messages, list every person mentioned or speaking in the source — full name as it appears, plus role/affiliation if given. For each name, check [`deal-context/stakeholder-map.md`](../../deal-context/stakeholder-map.md) for an existing entry, including plausible spelling variants.
+
+- If the name matches an existing stakeholder exactly, treat it as known and proceed.
+- For every name **not** found in `stakeholder-map.md`, ask the user to confirm one of:
+  - **misspelling of <existing stakeholder>** — do not create a new entry; use the existing name
+  - **new person** — confirm spelling and that a new entry should be created
+  - **ignore** — passing mention, do not record
+
+Do not create a new person entry or add anyone to `stakeholder-map.md` until the user has explicitly confirmed it. Do not proceed to step 3 until every unknown name has a confirmed disposition.
 
 ## 3. Update or create wiki pages
 
@@ -66,9 +82,9 @@ If the ingest also produces a **decision** worth recording, apply the same patte
 
 ## 5. Update indexes
 
-- Add or update the source's entry in the `## Index` section of its raw-input folder's README (`client-inputs/README.md` or `team-inputs/README.md`).
-- For every wiki folder where a page was created, renamed, or removed, update that folder's `README.md` index.
-- Add any new wiki pages to the categorised list in the root [`index.md`](../../index.md).
+For wiki pages created, renamed, or removed, follow the two-level index rule in [`AGENTS.md`](../../AGENTS.md) — update both the root `index.md` and the parent folder's `README.md`.
+
+Ingest-specific addition: also add or update the source's entry in the `## Index` section of its raw-input folder's README (`client-inputs/README.md` or `team-inputs/README.md`).
 
 ## 6. Append to log.md
 
