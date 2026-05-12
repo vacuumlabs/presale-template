@@ -11,10 +11,8 @@ A companion to [`README.md`](README.md). The README tells you *what to do*; this
 - [How the raw layer really works](#how-the-raw-layer-really-works)
 - [How Claude keeps the wiki synced](#how-claude-keeps-the-wiki-synced)
 - [Page metadata](#page-metadata)
-- [Scaffolding wiki pages at kickoff](#scaffolding-wiki-pages-at-kickoff)
-- [The revert principle](#the-revert-principle)
 - [Propagating template updates to live engagements](#propagating-template-updates-to-live-engagements)
-- [On the roadmap](#on-the-roadmap)
+- [Recipes you can add later](#recipes-you-can-add-later)
 
 ## The problem it solves
 
@@ -76,17 +74,17 @@ Sometimes a PO writes a persona that's already wiki-shaped — well-structured, 
 
 ## How Claude keeps the wiki synced
 
-Three verbs drive everything. `/ingest` and `/lint` are explicit slash commands; asking a question runs automatically because `CLAUDE.md` routes substantive project questions through `.claude/commands/query.md`.
+Three verbs drive everything. Only `/lint` is a slash command users type — `/ingest` is invoked implicitly by drag-and-drop (with the slash form `/ingest <path>` as a fallback for files already on disk), and asking a question runs automatically because `CLAUDE.md` routes substantive project questions through `.claude/commands/query.md`.
 
-The operational details are in the [README's Operations section](README.md#operations-ingest-ask-lint). Two mechanics worth understanding once:
+The operational details are in the [README's three-verbs section](README.md#the-three-verbs-ingest-ask-lint). Two mechanics worth understanding once:
 
 ### The `synthesiser` subagent
 
 For work that would otherwise drag large volumes of source text into the main conversation — *"build the competitor wiki page from every mention across all inputs"* — Claude delegates to the `synthesiser` subagent defined in `.claude/agents/synthesiser.md`. The subagent reads the raw sources in its own context and returns only the compact diff. The main conversation stays focused on review, not retrieval. You don't invoke the subagent directly; Claude does, when the job calls for it.
 
-### Why `/query` is implicit but `/ingest` and `/lint` are explicit
+### Why only `/lint` is a slash command users type
 
-Asking questions is the high-frequency, low-friction operation — forcing users to type `/query` adds ceremony. The routing in `CLAUDE.md` gives substantive project questions the full cited-answer workflow without asking the user to opt in. `/ingest` and `/lint` stay explicit because they change the wiki state, should be deliberate, and log actions that need to be reviewable.
+Asking a question is the high-frequency, low-friction operation — forcing users to type a `/query` slash command adds ceremony with no benefit. Dragging a file into the Claude Code panel is the same kind of natural-action trigger: it unambiguously signals *"I want this file ingested"*, so Claude internally invokes `/ingest <resolved-path>` without making the user type it. (The explicit slash form stays as a fallback when the file is already on disk.) `/lint` stays the one slash command users type because it's deliberate, infrequent (weekly), produces a dated report users may want to schedule or rerun, and isn't naturally triggered by anything else.
 
 ## Page metadata
 
@@ -98,18 +96,6 @@ Every wiki page and every `team-inputs/` file opens with a YAML block. The basel
 - `canonical_source` — on a wiki page whose source of truth is a polished team-authored file; the wiki page references rather than duplicates.
 
 Metadata is the reason Claude can filter and route without reading every body. Queries narrow by `type` and `tags`; `/lint` finds stale pages via `last_updated`; contradiction detection uses `informed_by` to trace which team artefacts depend on which client evidence. You never write it by hand — `/ingest`, the synthesiser subagent, and any *"scaffold a new …"* request fill it in for you. The complete field reference lives in [`AGENTS.md`](AGENTS.md).
-
-## Scaffolding wiki pages at kickoff
-
-The README's kickoff checklist lists the wiki pages each role should create in week one. You don't have to write them one by one. Any role can ask Claude to scaffold their whole set in one shot:
-
-> *"I'm the PO — scaffold the product-management wiki pages for kickoff against the current `engagement.md`."*
-
-Claude creates empty pages with the right metadata and leaves `TODO` bodies for the author to fill. Missing wiki pages are worse than 3-sentence stubs, because `/ingest` needs something to hang cross-links on — scaffolding gets you to "at least stubs" in a single prompt.
-
-## The revert principle
-
-The README's revert table covers the common situations. The underlying rule: **the further a change has travelled (working copy → commit → pushed), the more work it takes to undo.** Catching mistakes before `push` is always cheaper. For secrets this is not just a convenience rule — it's the difference between "rotate later" and "rotate now, assume it's been seen."
 
 ## Propagating template updates to live engagements
 
@@ -167,10 +153,15 @@ If you expect to diverge from the template's schema for good reason (a client ne
 
 Repos created from the template before `/sync-template` landed won't have the command. One-time bootstrap: in the downstream repo, ask Claude *"fetch `.claude/commands/sync-template.md` and `sync-manifest.json` from `vacuumlabs/project-template` and save them locally."* From that point `/sync-template` is available and keeps the repo in sync automatically.
 
-## On the roadmap
+## Recipes you can add later
 
-Not configured yet; worth adding when someone has the time.
+Not configured by default. Add when you're comfortable with the basics.
 
-### Git pre-commit metadata validation
+### Scheduled `/lint`
 
-A hook that blocks commits adding wiki pages with invalid metadata. Catches drift mechanically at commit time rather than waiting for weekly `/lint` to surface it. Particularly valuable once the wiki has 50+ wiki pages and manual edits start sneaking in.
+*"Schedule /lint every Monday at 09:00."* Claude uses the `schedule` skill to drop a report into `project-management/lint-reports/` and (optionally) ping Slack or email.
+
+### MCP-backed ingest
+
+Connectors for Slack, Gmail, Jira, Confluence, Drive, and Calendar ship with Claude. Teach Claude to pull directly: *"Pull yesterday's messages from #client-x into `client-inputs/` and ingest."* Same for Confluence pages, Gmail threads, Drive files. Once you've used a variant twice, promote it to `/ingest-slack`, `/ingest-gmail`, etc.
+

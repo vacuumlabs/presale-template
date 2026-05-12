@@ -1,5 +1,5 @@
 {
-  "version": "1.5.1",
+  "version": "1.7.0",
   "updated": "2026-05-12",
   "template_repo": "vacuumlabs/project-template",
   "template_branch": "master",
@@ -8,6 +8,7 @@
     "CLAUDE.md",
     "HOW-IT-WORKS.md",
     "README.md",
+    "SETUP.md",
     ".gitattributes",
     ".gitignore",
     "sync-manifest.json",

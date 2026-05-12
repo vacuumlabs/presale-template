@@ -30,7 +30,7 @@ Each folder has its own `README.md` with the typical wiki pages and its local in
 
 ## Operations
 
-Three verbs drive the wiki. Two are explicit slash commands; the third — answering questions — runs automatically whenever the user asks a substantive project question (see [`CLAUDE.md`](./CLAUDE.md)).
+Three verbs drive the wiki. **Only `/lint` is an explicit slash command users type.** `/ingest` is normally invoked implicitly via drag-and-drop (the slash form `/ingest <path>` is the fallback for files already on disk). Answering questions runs automatically whenever the user asks a substantive project question (see [`CLAUDE.md`](./CLAUDE.md)).
 
 - **[`/ingest <path>`](./.claude/commands/ingest.md)** — integrate a new raw source. Creates or updates wiki pages (typically 5–15 per source), flags contradictions, updates indexes, appends to `log.md`.
 - **Answering a question** — no slash command needed. Claude follows the workflow in [`.claude/commands/query.md`](./.claude/commands/query.md): reads `index.md` first, prefers wiki pages over raw sources, cites every factual claim, names gaps honestly, flags contradictions, and offers to refile reusable answers as new wiki pages. This is how the wiki compounds.
