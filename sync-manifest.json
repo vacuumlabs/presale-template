@@ -1,6 +1,6 @@
 {
-  "version": "1.5.0",
-  "updated": "2026-05-05",
+  "version": "1.5.1",
+  "updated": "2026-05-12",
   "template_repo": "vacuumlabs/project-template",
   "template_branch": "master",
   "files": [

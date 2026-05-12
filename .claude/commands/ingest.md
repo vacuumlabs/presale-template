@@ -32,6 +32,8 @@ Before touching any wiki pages, surface to the user:
 
 Ask the user which entities to expand into wiki pages and which to leave as passing mentions. Do not assume.
 
+For updated information that resolves open points or supersedes an older decision, ask whether to keep the old info in a note or just update the pages with the new info, replacing the old one to keep the page clean.
+
 ### 2a. Confirm unknown people
 
 When ingesting transcripts or Slack messages, list every person mentioned or speaking in the source — full name as it appears, plus role/affiliation if given. For each name, check [`deal-context/stakeholder-map.md`](../../deal-context/stakeholder-map.md) for an existing entry, including plausible spelling variants.
