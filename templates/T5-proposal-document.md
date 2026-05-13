@@ -185,12 +185,16 @@ Embed or reference the C4 Level 1 (System Context) and Level 2 (Container) diagr
 
 ### 7.1 Phases Overview
 
-Summary table of all phases:
+Summary table of all phases. Every plan must include UAT, go-live, hypercare, and handover as explicit phases — do not omit them.
 
 | Phase | Scope summary | Duration | Team size | Client value delivered |
 | --- | --- | --- | --- | --- |
-| P0 — Discovery | ... | X weeks | N FTEs | ... |
+| P0 — Discovery _(if applicable)_ | ... | X weeks | N FTEs | ... |
 | P1 — ... | ... | X months | N FTEs | ... |
+| UAT | Client acceptance testing across all in-scope flows | X weeks | N FTEs | Client signs off on delivery |
+| Go-live & Release | Production cutover, release activities | X days/weeks | N FTEs | System live in production |
+| Hypercare | Intensive post-go-live support; rapid response to production issues | 2–4 weeks | N FTEs | Stable production operation |
+| Handover | Knowledge transfer, documentation handover, BAU transition | X weeks | N FTEs | Client team self-sufficient |
 
 ### 7.2 Phase Detail
 
@@ -205,7 +209,7 @@ For each phase (one subsection per phase):
 
 ### 7.3 Timeline
 
-Visual or tabular timeline from project start to full scope delivery. Highlight: start date, first live product, full go-live.
+Visual or tabular timeline from project start to handover completion. Highlight: start date, first live product, go-live, end of hypercare.
 
 ---
 
@@ -224,28 +228,35 @@ How VL will work with the client team: sprint cadence, ceremonies, reporting, es
 
 ### 8.3 Client-Side Commitments
 
-What we need from the client for delivery to succeed: access to stakeholders, timely decisions, system access, participation in key ceremonies.
+What we need from the client for delivery to succeed: access to stakeholders, timely decisions, system access, participation in key ceremonies. Specifically for the closing phases: dedicated UAT resources and timelines, go/no-go decision authority, named handover recipients for knowledge transfer.
 
 ---
 
 ## 9. Estimate
 
-**Source:** `estimation-final.md` (P5f), `ai-impact.md` (P5e)
+**Source:** `estimation-final.md` (P5)
 **Owner:** SA owns numbers; Sales owns commercial framing and sign-off.
 
 ### 9.1 Estimate Summary
 
-|  | Baseline | AI-Assisted |
-| --- | --- | --- |
-| **Total effort** | X–Y man-days | X–Y man-days |
-| **Indicative cost** | €X–€Y | €X–€Y |
-| **Saving with AI tooling** | — | \~X% / €Z |
-
-Brief explanation of what AI-assisted means in practice (VL uses Claude, Copilot, AI test generation as standard; the AI-assisted estimate reflects realistic productivity gains, not theoretical maximum).
+| | |
+| --- | --- |
+| **Total effort** | X–Y man-days |
+| **Indicative cost** | €X–€Y |
 
 ### 9.2 Estimate by Phase
 
-Phase-by-phase cost breakdown (effort and indicative cost per phase).
+Phase-by-phase cost breakdown (effort and indicative cost per phase), including UAT, go-live, hypercare, and handover.
+
+| Phase | Effort (man-days) | Indicative cost |
+| --- | --- | --- |
+| P0 — Discovery _(if applicable)_ | X–Y | €X–€Y |
+| P1 — ... | X–Y | €X–€Y |
+| UAT | X–Y | €X–€Y |
+| Go-live & Release | X–Y | €X–€Y |
+| Hypercare | X–Y | €X–€Y |
+| Handover | X–Y | €X–€Y |
+| **Total** | **X–Y** | **€X–€Y** |
 
 ### 9.3 Key Assumptions
 
