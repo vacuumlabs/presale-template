@@ -8,15 +8,21 @@ A template repo for running an AI-assisted SDLC against a client engagement — 
 
 See [`AGENTS.md`](AGENTS.md) for the schema Claude follows (routing, operations, metadata, edit contract). See [`HOW-IT-WORKS.md`](HOW-IT-WORKS.md) for design rationale and deeper mechanics.
 
+> **Running a Vacuumlabs presale?** This repo is the seed for V2 presale engagements. Per-stage slash commands (`/p1`–`/p9`) drive intake, problem framing, technical architecture, estimation, ARB submission, proposal assembly, and win/loss debrief. Jump to [V2 Presale SDLC](#v2-presale-sdlc) below, or read the Confluence overview: [V2 Presale SDLC Overview](https://vacuum.atlassian.net/wiki/spaces/Engineerin/pages/3298721855/V2+Presale+SDLC+Overview) · [V2 Tooling — Presale Template Repo](https://vacuum.atlassian.net/wiki/spaces/Engineerin/pages/3364356100/V2+Tooling+Presale+Template+Repo).
+
 ## Who uses this repo
 
 Three roles drive the wiki on a typical engagement. Each section below is self-contained — scroll to yours.
 
 - [**Project Manager (PM)**](#if-youre-the-project-manager) — contract, commercials, stakeholders, roadmap, risks, weekly status
 - [**Product Owner (PO)**](#if-youre-the-product-owner) — problem framing, personas, features, scope, estimates
-- [**Tech Lead**](#if-youre-the-tech-lead) — architecture, systems, integrations, ADRs, technical scope
+- [**Tech Lead**](#if-youre-the-tech-lead) — architecture, systems, integrations, ADRs, technical scope. _In V2 presale engagements this is the Solution Architect (SA)._
 
-Then: [the three verbs](#the-three-verbs-ingest-ask-lint) you'll use daily, and [first-time setup](#first-time-setup).
+On a V2 presale engagement, a fourth role joins:
+
+- [**Sales (presale only)**](#sales-presale-only) — T1 brief, budget signal, proposal narrative review, commercial sign-off
+
+Then: [the three verbs](#the-three-verbs-ingest-ask-lint) you'll use daily, [V2 Presale SDLC](#v2-presale-sdlc) if this is a presale, and [first-time setup](#first-time-setup).
 
 ## If you're the Project Manager
 
@@ -100,6 +106,47 @@ Then: [the three verbs](#the-three-verbs-ingest-ask-lint) you'll use daily, and 
 - *"Which decisions in [`decisions.md`](decisions.md) lack a corresponding ADR?"*
 - *"List every ADR, with its status and the systems it touches."*
 - *"Generate a pre-ARB pack: the integration map, the ADRs I need to defend, and the open technical questions."*
+
+## V2 Presale SDLC
+
+This repo is also the canonical **Vacuumlabs presale template**. For presale engagements, the V2 SDLC adds tier classification (T1 / T2 / T3), a budget signal as a first-class intake input, four review gates (G1–G4), six templates (T1, T2, T4, T5, T6, T7 — the ARB submission template is canonical on Confluence), and one slash command per presale stage.
+
+**Confluence:** [V2 Presale SDLC Overview](https://vacuum.atlassian.net/wiki/spaces/Engineerin/pages/3298721855/V2+Presale+SDLC+Overview) for the process narrative (stages, gates, templates as humans see them). [V2 Tooling — Presale Template Repo](https://vacuum.atlassian.net/wiki/spaces/Engineerin/pages/3364356100/V2+Tooling+Presale+Template+Repo) is the entry point that explains the repo + tooling division of responsibility.
+
+**AI assistance:** Ask the `vacuumlabs-presale-guide` skill (from the [`superpowers`](https://github.com/anthropics/claude-plugins-official) plugin marketplace — install via `/plugin marketplace add anthropics/claude-plugins-official` then `/plugin install superpowers@claude-plugins-official`) for stage-by-stage and role-by-role guidance.
+
+### Sales (presale only)
+
+**Your job:** supply the T1 brief before G1 and the budget signal before solutioning begins. Participate in the Sales Strategy Alignment call (T7) before G2. Review proposal narrative (§1 Executive Summary, §11 Why Vacuumlabs, §12 Next Steps) and co-sign estimates before G4.
+
+**How to start:**
+
+1. Copy `templates/T1-sales-deal-brief.md` → `team-inputs/T1-sales-deal-brief.md`
+2. Fill in — especially the budget signal (Hard / Soft / Unknown)
+3. Drag the filled file into Claude Code and ingest it
+4. Then `/p1` kicks off the intake
+
+**Your critical input:** the budget signal. All solutioning works backwards from this. If you can't get a Hard or Soft signal, say so in T1 — the process has a Lean / Standard / Full three-option path for Unknown. What it cannot handle is silence.
+
+### Presale slash commands
+
+Each presale stage has a slash command. Run inside the engagement repo — the command reads the wiki, drafts outputs, writes to the right folder, and commits automatically.
+
+| Stage | Command | Required inputs in wiki |
+|---|---|---|
+| Deal Intake | `/p1` | T1 in `team-inputs/` |
+| Domain Research | `/p2` | P1 outputs in `deal-context/` |
+| Problem Framing | `/p3` | T2 in `team-inputs/`, P2 outputs |
+| Business Architecture | `/p3e` | P3a–P3d outputs |
+| Sales Strategy Alignment | `/p3f prepare` → call → `/p3f document` | P3e + P2c outputs |
+| Technical Architecture | `/p4` | P3a–P3e + T7 outputs |
+| Estimation | `/p5` | P4 outputs |
+| ARB Submission | `/p6` | P4 + P5 outputs; fetches canonical ARB template from Confluence at runtime |
+| Proposal Assembly | `/p7` | All P1–P5 + P3e outputs |
+| Quality Check | `/p8 sa` and `/p8 pm` | Proposal draft |
+| Win/Loss Debrief | `/p9` | T6 in `team-inputs/` |
+
+If a command stops because an input is missing, it tells you exactly which file to add before re-running.
 
 ## The three verbs: ingest, ask, /lint
 
