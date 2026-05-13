@@ -99,14 +99,15 @@ Include: technical risks, commercial risks, delivery risks, regulatory/complianc
 * Top 5 drivers of effort
 * What would cause the estimate to increase materially?
 * What would cause it to decrease?
-* Method A total and Method B total, reconciled baseline range
-* AI-assisted estimate: key savings and resulting range
-* Recommended ranges to present to client:
+* Development effort range (from `estimation-dev.md`): [min]–[max] man-days
+* Overhead allocations (from `estimation-overhead.md`): PM, PO, QA, design, infra by phase
+* Combined estimate (from `estimation-final.md`):
 
-    * Baseline (no AI tooling assumption): €\___\_ – €\____\_
-    * AI-assisted: €\___\_ – €\____\_
+    * Effort: [min]–[max] man-days
+    * Indicative cost: €[min]–€[max]
 
-* Key assumptions each range rests on
+* Key assumptions the estimate rests on
+* Budget reconciliation: how the estimate compares to the budget signal (Hard / Soft), or the three-option scenarios produced for Unknown signal
 
 ---
 

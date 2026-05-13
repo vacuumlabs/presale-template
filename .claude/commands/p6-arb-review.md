@@ -18,7 +18,7 @@ Check that the following exist (read `index.md` to verify):
 - `technical-architecture/architecture.md` (P4b)
 - `project-management/epics.md` (P5a)
 - `project-management/phasing.md` (P5b)
-- `project-management/estimation-final.md` (P5f)
+- `project-management/estimation-final.md` (P5e)
 
 If any of these is missing, stop and list exactly which pages need to be created before P6 can run.
 

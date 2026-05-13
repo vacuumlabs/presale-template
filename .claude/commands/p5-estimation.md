@@ -20,7 +20,7 @@ Check that the following exist (read `index.md` to verify):
 
 If any P4 output is missing, stop: "P5 requires P4 to be complete. Run `/p4` first."
 
-Note the budget signal from the T1 brief. If Unknown, the reconciliation step (P5f) will produce three scenarios.
+Note the budget signal from the T1 brief. If Unknown, the reconciliation step (P5e) will produce three scenarios.
 
 ## 1. P5a — Epic generation
 
@@ -59,7 +59,7 @@ status: draft
 
 **After epics.md is reviewed and accepted.**
 
-Group the development epics into delivery phases. This step covers **development work only** — overhead roles are estimated separately in P5e.
+Group the development epics into delivery phases. This step covers **development work only** — overhead roles are estimated separately in P5d.
 
 For each phase:
 - Phase name and number
@@ -75,7 +75,7 @@ After all phases:
 - Total timeline (dev phases only)
 - Phasing rationale
 - Phase 0 recommendation — if paid Discovery is needed before committing to full scope, say so here and explain why
-- If budget signal is Unknown: note which phases fit within different budget scenarios (this feeds the P5f three-option output)
+- If budget signal is Unknown: note which phases fit within different budget scenarios (this feeds the P5e three-option output)
 
 **Important:** Always include UAT, go-live & release, hypercare, and handover as explicit phases at the end of the plan. These are not optional.
 
@@ -105,7 +105,7 @@ For each development epic, estimate effort independently of the team×timeline c
 For each epic:
 1. Complexity: Low / Medium / High / Very High
 2. Effort range [min–max man-days]
-3. Key assumptions (off-the-shelf vs custom, VL reuse applied, integration complexity)
+3. Key assumptions (off-the-shelf vs custom, VL reuse applied, integration complexity, AI-tooled productivity baseline)
 4. Confidence: High / Medium / Low, with reason
 
 After all epics:
@@ -116,6 +116,18 @@ After all epics:
 **Do not produce a single number. The range is the output.**
 
 This is a development-only estimate. Do not include PM, QA, design, or infra in this step.
+
+### SA verification — AI productivity assumptions
+
+Before accepting the dev estimate, the SA must explicitly state and validate the AI-tooled productivity assumptions baked into the man-day ranges. Examples:
+
+- "AI tooling (Claude Code, Copilot, AI test generation) reduces hand-written backend code by 25–35%"
+- "Generic infra scaffolding is ~50% faster with AI assistance"
+- "Test-suite drafting from prompts cuts QA effort by 20%"
+
+These assumptions stay **internal** — they are not surfaced to the client (per the 2026-05-13 decision: a single estimate, no baseline-vs-AI split). They must, however, be **explicit in the wiki** so the estimate can be defended at ARB and updated if AI tooling capabilities change.
+
+Record the AI productivity assumptions in `estimation-dev.md` under a dedicated `## AI productivity (internal)` subsection. **The SA is responsible and accountable** for these numbers being realistic — the prompt will draft them, but the SA must double-check every line before accepting the estimate.
 
 Create `project-management/estimation-dev.md`:
 
@@ -140,7 +152,7 @@ This cross-check is internal validation. Both methods stay in `estimation-dev.md
 
 **Stop here. Ask the user to review estimation-dev.md before continuing.**
 
-## 4. P5e — Overhead role allocations
+## 4. P5d — Overhead role allocations
 
 **After estimation-dev.md is reviewed and accepted.**
 
@@ -175,7 +187,7 @@ status: draft
 
 **Stop here. Ask the user to review overhead allocations before continuing.**
 
-## 5. P5f — Combined estimate and budget reconciliation
+## 5. P5e — Combined estimate and budget reconciliation
 
 **After estimation-overhead.md is reviewed and accepted.**
 

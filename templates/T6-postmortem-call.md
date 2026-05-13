@@ -55,7 +55,6 @@ _(Budget cut, internal politics, incumbent advantage, timing)_
 * Did the proposal clearly reflect the client's problem, in their language? Y / N / Partially
 * Did the "Why Vacuumlabs" section land? Y / N / Don't know
 * Was the estimate in the right range? Y / N / Don't know
-* Did we present both baseline and AI-assisted estimates? Y / N
 * If lost on price — was it the total, the rate, or the model (T&M vs FSFP)?
 
 ---

@@ -63,3 +63,11 @@ Claude appends entries here whenever a decision surfaces during `/ingest` or whi
 - **Context:** P3e (Business Architecture) needs raw material from discovery on how teams' work changes and how the client will measure success. This was not captured in T2 before.
 - **Made by:** Boris Vida (Step 1.5 content review)
 - **Status:** active
+
+## 2026-05-13 — Clarify AI productivity in the single-estimate model (SA accountability)
+
+- **Decision:** The 2026-05-13 decision to drop the AI-assisted vs baseline comparison removed the *client-facing* split, not AI productivity itself. AI-tooled productivity remains baked into the single estimate. The SA is responsible and accountable for stating these assumptions explicitly in `estimation-dev.md` under a dedicated `## AI productivity (internal)` subsection and confirming them at ARB. P5 drafts them; the SA double-checks every line before accepting the estimate.
+- **Context:** Risk that "drop AI/baseline split" was read as "ignore AI productivity entirely", which would produce defensively-conservative estimates that lose deals on price. AI productivity is real and assumed; it just isn't surfaced as a marketing line to the client.
+- **Made by:** Boris Vida
+- **Refines:** "Drop AI-assisted vs baseline comparison from estimates" (2026-05-13). Both decisions are active together.
+- **Status:** active

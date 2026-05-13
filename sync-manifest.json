@@ -40,12 +40,12 @@
   ],
   "external_tools": [
     {
-      "name": "gstack",
-      "source": "https://github.com/garrytan/gstack",
+      "name": "superpowers",
+      "source": "https://github.com/anthropics/claude-plugins-official",
       "version": null,
       "status": "candidate",
-      "relevant_commands": ["/review", "/security-review"],
-      "install_note": "Clone repo and run ./setup to add commands to Claude Code. Commands coexist with presale commands — different prefixes, no conflicts."
+      "relevant_commands": ["/review", "/security-review", "/init", "/brainstorming", "/writing-plans", "/systematic-debugging"],
+      "install_note": "Install via the Claude Code plugin marketplace: run '/plugin marketplace add anthropics/claude-plugins-official' then '/plugin install superpowers@claude-plugins-official'. Plugin commands coexist with presale commands — different prefixes, no conflicts."
     }
   ]
 }

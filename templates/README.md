@@ -11,7 +11,7 @@ Structured inputs and outputs for the presale process. These are schema-layer fi
 | Template | Stage | Owner | How to use |
 | --- | --- | --- | --- |
 | [T1 — Sales Deal Brief](T1-sales-deal-brief.md) | Intake (before G1) | Sales | Copy to `team-inputs/`, fill in before the intake call. Required input for `/p1`. |
-| [T2 — Discovery Q&A](T2-discovery-qa.md) | Problem Framing (Stage 3) | PM | Copy to `team-inputs/`, fill in during/after discovery calls. Required input for `/p3`. |
+| [T2 — Discovery Q&A](T2-discovery-qa.md) | Problem Framing (Stage 3) | PO | Copy to `team-inputs/`, fill in during/after discovery calls. Required input for `/p3`. |
 | [T3 — ARB Submission](T3-arb-submission.md) | ARB Review (Stage 6) | SA | Use as reference structure. `/p6` drafts this directly into `technical-architecture/arb-records/`. |
 | [T4 — Deal Outcome](T4-deal-outcome.md) | Debrief (Stage 9) | PM | Reference structure. `/p9` produces `_deal-outcome.md` at the repo root. |
 | [T5 — Proposal Document](T5-proposal-document.md) | Proposal Assembly (Stage 7) | PM | Reference structure for the Google Doc. `/p7` drafts all sections; PM assembles into GDoc. |

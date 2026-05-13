@@ -154,7 +154,36 @@ Cover in 1 page maximum: client challenge (2–3 sentences in their language), w
 
 **Review with Sales before copying into the Google Doc.**
 
-## 4. Create the proposal draft file
+## 4. P7d — Business Architecture section
+
+**After P7a, P7b, and P7c are settled.**
+
+Produces: §5 Business Architecture.
+
+**Source:** `product-management/business-architecture.md` (P3e)
+**Owner:** PO drafts; SA reviews; PM owns RACI accuracy.
+
+The substance is already in `business-architecture.md` from P3e. P7d adapts it for the proposal:
+
+- Confirm stakeholders, value streams, RACI, operating model impact, and success measures are still accurate against the latest scope
+- Tighten wording for the client — drop internal VL phrasing, keep client-facing nouns
+- Include a half-page diagram for the headline value stream (Mermaid or reference the `.drawio` from P3b)
+
+**Section 5 — Business Architecture**
+
+5.1 Stakeholders & Actors — stakeholder table + actor list + simple context diagram (from `business-architecture.md` §1).
+
+5.2 Value Streams — 3–5 end-to-end value streams. Summary table + half-page flow for the headline stream. Cross-reference §3 In-Scope Flows.
+
+5.3 Responsibility Split (RACI) — at workstream / capability cluster level. Parties: Bank / VL / Platform Vendor / Other. Flag any RACI ambiguities — these are scope risks.
+
+5.4 Operating Model Impact — optional, transformational deals only. Teams affected, new internal capabilities needed, training/change management at headline level. Cross-reference §8.3 Client-Side Commitments.
+
+5.5 Outcomes & Success Measures — 3–5 measurable outcomes tied to in-scope capabilities. Format: capability change → operational metric → business outcome. Pulls from §2.4 (What Success Looks Like).
+
+**PM must confirm RACI accuracy before this goes into the Google Doc. SA must confirm the headline value-stream diagram.**
+
+## 5. Create the proposal draft file
 
 Create `project-management/proposal-drafts/YYYY-MM-DD-proposal-draft.md` (use today's date):
 
@@ -173,14 +202,14 @@ status: draft
 ---
 ```
 
-Body: all draft text from P7a, P7b, and P7c assembled in T5 section order.
+Body: all draft text from P7a, P7b, P7c, and P7d assembled in T5 section order.
 
-## 5. Update indexes
+## 6. Update indexes
 
 - Add entry in root [`index.md`](../../index.md)
 - Add entry in `project-management/README.md` under `## Index`
 
-## 6. Append to log.md
+## 7. Append to log.md
 
 ```
 ## [YYYY-MM-DD HH:MM] ingest | P7 proposal assembly — <client name>
@@ -190,15 +219,14 @@ Proposal draft created in project-management/proposal-drafts/.
 - P7a: §3 Scope, §6 Tech Architecture, §8 Team, §10 Risks
 - P7b: §7 Delivery Plan, §9 Estimate
 - P7c: §1 Executive Summary, §2 Challenge, §4 Approach, §11 Why VL, §12 Next Steps
-- Note: §5 Business Architecture drafted separately — run /p7 again after /p3e if needed
+- P7d: §5 Business Architecture
 ```
 
-## 7. Report back
+## 8. Report back
 
 Tell the user:
 - File created at `project-management/proposal-drafts/YYYY-MM-DD-proposal-draft.md`
-- Which reviewer must check which sections (SA: §4.3 and §6; Sales: §1, §11, §12; SA+Sales: §9)
-- That §5 Business Architecture is drafted by P7 using P3e output — if P3e was not yet complete when P7 ran, re-run P7 to add §5
+- Which reviewer must check which sections (SA: §4.3 and §6; Sales: §1, §11, §12; SA+Sales: §9; PM: §5 RACI)
 - What to do next: "Assemble the draft text into the Google Doc following T5 structure. Then run `/p8` before sending."
 
 Changes are committed and pushed automatically when this turn ends.
