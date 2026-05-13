@@ -60,6 +60,8 @@ Show the user:
 - For each `new` or `to delete` file: the path only.
 - **Flag prominently** any file where the local version appears to have been customised locally (substantially diverged from the prior template version). For these, recommend reviewing the diff carefully before overwriting.
 
+Also note: **External tools listed in `sync-manifest.json` under `external_tools` are candidates — install separately if needed. This command does not install them.**
+
 Ask the user to choose:
 - **Apply all** — proceed with everything.
 - **Pick per file** — step through each changed file and confirm or skip.
