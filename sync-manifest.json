@@ -1,7 +1,7 @@
 {
   "version": "1.7.0",
-  "updated": "2026-05-12",
-  "template_repo": "vacuumlabs/project-template",
+  "updated": "2026-05-13",
+  "template_repo": "vacuumlabs/presale-template",
   "template_branch": "master",
   "files": [
     "AGENTS.md",
@@ -17,6 +17,35 @@
     ".claude/commands/query.md",
     ".claude/commands/lint.md",
     ".claude/commands/sync-template.md",
-    ".claude/agents/synthesiser.md"
+    ".claude/commands/p1-deal-intake.md",
+    ".claude/commands/p2-domain-research.md",
+    ".claude/commands/p3-problem-framing.md",
+    ".claude/commands/p3e-business-architecture.md",
+    ".claude/commands/p3f-sales-strategy-alignment.md",
+    ".claude/commands/p4-technical-architecture.md",
+    ".claude/commands/p5-estimation.md",
+    ".claude/commands/p6-arb-review.md",
+    ".claude/commands/p7-proposal-assembly.md",
+    ".claude/commands/p8-quality-check.md",
+    ".claude/commands/p9-win-loss-debrief.md",
+    ".claude/agents/synthesiser.md",
+    "templates/T1-sales-deal-brief.md",
+    "templates/T2-discovery-qa.md",
+    "templates/T3-arb-submission.md",
+    "templates/T4-deal-outcome.md",
+    "templates/T5-proposal-document.md",
+    "templates/T6-postmortem-call.md",
+    "templates/T7-sales-strategy-alignment.md",
+    "templates/README.md"
+  ],
+  "external_tools": [
+    {
+      "name": "gstack",
+      "source": "https://github.com/garrytan/gstack",
+      "version": null,
+      "status": "candidate",
+      "relevant_commands": ["/review", "/security-review"],
+      "install_note": "Clone repo and run ./setup to add commands to Claude Code. Commands coexist with presale commands — different prefixes, no conflicts."
+    }
   ]
 }

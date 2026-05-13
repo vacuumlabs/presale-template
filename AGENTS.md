@@ -97,6 +97,29 @@ Optional automations users may add (see the root README):
 - A weekly scheduled `/lint` job.
 - MCP-backed ingest variants that pull from Slack / Gmail / Jira / Confluence / GDrive into `client-inputs/` or `team-inputs/`.
 
+## Presale-specific routing notes
+
+This template is used exclusively for presale engagements. Additional routing rules:
+
+| Content type | Where it goes |
+|-------------|---------------|
+| Intake analysis, similar deals, go/no-go flags, pre-meeting brief | `deal-context/` |
+| Domain research, regulatory brief, competitive positioning | `product-management/` |
+| Problem statement, capabilities map, in-scope flows, known unknowns | `product-management/` |
+| Business architecture (stakeholders, RACI, value streams, outcomes) | `product-management/` |
+| Sales strategy alignment (T7 output) | `deal-context/` |
+| VL assets brief | `technical-architecture/` |
+| Architecture document + diagram files | `technical-architecture/` |
+| Epics, phasing, estimation files | `project-management/` |
+| Proposal drafts | `project-management/proposal-drafts/` |
+| Quality check reports | `project-management/quality-checks/` |
+| ARB submissions | `technical-architecture/arb-records/` |
+| Deal outcome | `_deal-outcome.md` at repo root |
+
+**Schema-layer files** — `templates/T1–T7.md` are reference templates, never edited per-engagement. Copy to `team-inputs/` before filling in.
+
+**Knowledge base access** — P1b (similar deals) and P4a (VL assets) search past deal outcomes in GDrive folder ID `160UcArBo0aG6eLHWwVkN8ZVrWLl9sdbv` using the Google Drive MCP. If GDrive MCP is unavailable, create the wiki page with a placeholder and note what needs manual population.
+
 ## Conventions
 
 - **Markdown for narrative.** Prefer Markdown for anything authored inside the repo.
