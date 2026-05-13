@@ -49,7 +49,7 @@ _Used during the discovery phase (Stage 3). Can be sent to the client in advance
 
 ## Section 5 — Constraints
 
-18. What is the hard budget for this initiative?
+18. What budget has been approved for this initiative?
 19. Are there any regulatory or compliance requirements that directly constrain the architecture or timeline?
 20. Are there any technology or vendor constraints we should know about?
 21. What is the latest acceptable go-live date for the first phase? What is the target?

@@ -1,5 +1,5 @@
 {
-  "version": "1.7.0",
+  "version": "1.8.0",
   "updated": "2026-05-13",
   "template_repo": "vacuumlabs/presale-template",
   "template_branch": "master",
@@ -31,7 +31,6 @@
     ".claude/agents/synthesiser.md",
     "templates/T1-sales-deal-brief.md",
     "templates/T2-discovery-qa.md",
-    "templates/T3-arb-submission.md",
     "templates/T4-deal-outcome.md",
     "templates/T5-proposal-document.md",
     "templates/T6-postmortem-call.md",
