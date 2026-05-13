@@ -56,7 +56,18 @@ _Used during the discovery phase (Stage 3). Can be sent to the client in advance
 
 ---
 
-## Section 6 — Open Questions
+## Section 6 — Operating Model & Success
+
+_These questions feed the Business Architecture output (P3e). Skip if this is a T1 engagement._
+
+22. Which internal teams will be most affected by this project? What does their day look like today, and how would it change?
+23. Are there roles or capabilities the client will need to build internally to run the new system? (e.g. a product configuration team, a new ops process)
+24. What would "a year after go-live" look like if this project succeeded? What would your team be doing differently?
+25. What metrics or KPIs would you use to judge whether this project delivered what it promised?
+
+---
+
+## Section 7 — Open Questions
 
 _Add any questions that emerged during workshops or calls that have not yet been answered._
 

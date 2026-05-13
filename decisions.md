@@ -42,3 +42,24 @@ Claude appends entries here whenever a decision surfaces during `/ingest` or whi
 - **Context:** These phases were previously absent from the template, leading to proposals that looked cheaper or shorter than reality.
 - **Made by:** Boris Vida (Step 1.5 content review)
 - **Status:** active
+
+## 2026-05-13 — Diagram tool: Mermaid for wiki, draw.io for complex architecture
+
+- **Decision:** Inline/summary diagrams in wiki pages use Mermaid (renders in GitHub, no binary file needed). Complex architecture diagrams where visual layout matters use draw.io via the draw.io MCP; these require a `.md` companion file alongside the `.drawio` binary. P3b (capabilities map) and P4b (architecture) use draw.io; any other diagram defaults to Mermaid.
+- **Context:** Using Mermaid for everything avoids the binary companion rule overhead on simple diagrams and makes wiki pages readable in GitHub. draw.io remains available for cases where diagram layout is architecturally significant.
+- **Made by:** Boris Vida (Step 1.5 content review)
+- **Status:** active
+
+## 2026-05-13 — P8 proposal review finding severity definitions
+
+- **Decision:** Three severity levels for P8 quality check findings: **Critical** = blocks sending (missing scope section, broken or missing estimate, no key assumptions stated); **Important** = must be fixed before sending (weak client narrative, uncovered material risk, wrong section numbers, missing UAT/hypercare phases); **Minor** = address if time permits (phrasing improvements, completeness of supporting sections, style).
+- **Context:** Severity levels were undefined in V1, making it hard to prioritise P8 findings under time pressure.
+- **Made by:** Boris Vida (Step 1.5 content review)
+- **Status:** active
+
+## 2026-05-13 — Add Business Architecture questions to T2 (Section 6)
+
+- **Decision:** T2 gains a new Section 6 ("Operating Model & Success", 4 questions: affected teams, new internal capabilities needed, year-after-go-live picture, success KPIs). The old "Open Questions" section renumbered to Section 7. Section 6 is marked optional for T1 engagements.
+- **Context:** P3e (Business Architecture) needs raw material from discovery on how teams' work changes and how the client will measure success. This was not captured in T2 before.
+- **Made by:** Boris Vida (Step 1.5 content review)
+- **Status:** active
