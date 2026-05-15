@@ -10,7 +10,38 @@ Download the Claude desktop app from [claude.ai/download](https://claude.ai/down
 
 From here on, every instruction that says *"ask Claude Code …"* means: type the quoted prompt into the Claude Code panel in the Claude app.
 
-## 2. Passwordless GitHub access (one-time per laptop)
+## 2. Install required skills and plugins (one-time per laptop)
+
+Two additions make Claude Code aware of Vacuumlabs-specific process knowledge and general-purpose engineering skills.
+
+### Vacuumlabs Presale Guide skill
+
+The `vacuumlabs-presale-guide` skill is bundled in this repo. Copy it to your user skills folder so Claude Code picks it up in every session:
+
+**Mac/Linux:**
+```
+cp .claude/skills/vacuumlabs-presale-guide.skill ~/.claude/skills/
+```
+
+**Windows (PowerShell):**
+```
+Copy-Item .claude\skills\vacuumlabs-presale-guide.skill "$env:USERPROFILE\.claude\skills\"
+```
+
+Restart Claude Code after copying. Once installed, Claude Code automatically invokes the skill when you ask process questions about the presale.
+
+### Superpowers plugin (recommended)
+
+Superpowers adds general engineering skills (brainstorming, systematic debugging, TDD, code review) that work alongside the presale commands. Install it once via Claude Code:
+
+```
+/plugin marketplace add anthropics/claude-plugins-official
+/plugin install superpowers@claude-plugins-official
+```
+
+Both steps require an active internet connection. The plugin persists across all your projects — install it once and it's always available.
+
+## 3. Passwordless GitHub access (one-time per laptop)
 
 Takes about five minutes. Ask Claude Code for each step — **follow Claude's instructions as they appear, then come back here for the next step**:
 
@@ -25,7 +56,7 @@ Takes about five minutes. Ask Claude Code for each step — **follow Claude's in
 
 After this, every `push` / `pull` just works. If you see `Permission denied (publickey)` at any point, ask Claude: *"My SSH connection to GitHub is failing — diagnose it."*
 
-## 3. Get a project onto your laptop
+## 4. Get a project onto your laptop
 
 On GitHub, open the repo → **Code → SSH**, and copy the URL. Then, in the Claude app:
 
@@ -38,7 +69,7 @@ New project from this template: on GitHub, open [`vacuumlabs/project-template`](
 
 > **Each time you open a new chat**, check the folder shown in the top-left of the Claude Code panel — it should show the project repo, not a previous project. If it's wrong, click `+` and re-select the correct folder before asking anything.
 
-## 4. Commit and push, in plain English
+## 5. Commit and push, in plain English
 
 A file lives in one of three places:
 
@@ -50,7 +81,7 @@ A file lives in one of three places:
 
 Lifecycle: **edit → commit → push**. Usually: *"commit and push this."*
 
-## 5. What can be undone
+## 6. What can be undone
 
 | Situation | Undoable? | Ask Claude |
 | --- | --- | --- |
@@ -62,6 +93,6 @@ Lifecycle: **edit → commit → push**. Usually: *"commit and push this."*
 
 The underlying principle: the further a change has travelled (working copy → commit → pushed), the more work it takes to undo. Catching mistakes before `push` is always cheaper.
 
-## 6. Safety rails already in place
+## 7. Safety rails already in place
 
 Two hooks live in [`.claude/settings.json`](.claude/settings.json) — auto-sync before every action, and force-push to `master` blocked. Full description in [`AGENTS.md` § "Automations configured in this repo"](AGENTS.md#automations-configured-in-this-repo).

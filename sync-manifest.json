@@ -1,6 +1,6 @@
 {
-  "version": "1.8.0",
-  "updated": "2026-05-13",
+  "version": "1.9.0",
+  "updated": "2026-05-15",
   "template_repo": "vacuumlabs/presale-template",
   "template_branch": "master",
   "files": [
@@ -29,6 +29,7 @@
     ".claude/commands/p8-quality-check.md",
     ".claude/commands/p9-win-loss-debrief.md",
     ".claude/agents/synthesiser.md",
+    ".claude/skills/vacuumlabs-presale-guide.skill",
     "templates/T1-sales-deal-brief.md",
     "templates/T2-discovery-qa.md",
     "templates/T4-deal-outcome.md",
