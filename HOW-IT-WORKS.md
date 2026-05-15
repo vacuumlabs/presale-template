@@ -99,7 +99,7 @@ Metadata is the reason Claude can filter and route without reading every body. Q
 
 ## Propagating template updates to live engagements
 
-GitHub's "Use as Template" copies the template once and then forgets — the downstream engagement repo has no git relationship to `vacuumlabs/project-template`. This means schema improvements made here (new hooks, updated commands, new merge drivers) don't reach existing engagements unless someone pulls them in deliberately.
+Engagement repos are created with GitHub's **Fork** button. The fork keeps `vacuumlabs/project-template` as its upstream, but schema improvements made here (new hooks, updated commands, new merge drivers) still don't reach existing engagements until someone deliberately pulls them in — engagement repos diverge fast with client-specific content, and a blanket upstream merge would clobber that content or surface noisy conflicts.
 
 ### The `/sync-template` command
 

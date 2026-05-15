@@ -34,7 +34,7 @@ On GitHub, open the repo → **Code → SSH**, and copy the URL. Then, in the Cl
 3. Ask: *"Clone `git@github.com:vacuumlabs/<repo>.git` here and open it."*
 4. Once cloning finishes, click **`+`** again, navigate into the newly-cloned folder (e.g. `~/work/project-qcp-kb/`), and select it. This sets it as the active working context.
 
-New project from this template: *"Create a new repo from `vacuumlabs/project-template` named `<client>-engagement`, clone it here, and walk me through the kickoff checklist."*
+New project from this template: on GitHub, open [`vacuumlabs/project-template`](https://github.com/vacuumlabs/project-template) → **Fork** → name the fork `<client>-engagement`. Then in the Claude app: *"Clone `git@github.com:vacuumlabs/<client>-engagement.git` here and walk me through the kickoff checklist."*
 
 > **Each time you open a new chat**, check the folder shown in the top-left of the Claude Code panel — it should show the project repo, not a previous project. If it's wrong, click `+` and re-select the correct folder before asking anything.
 
