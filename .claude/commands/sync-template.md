@@ -1,10 +1,10 @@
 ---
-description: Pull the latest schema-layer updates from the vacuumlabs/project-template repository
+description: Pull the latest schema-layer updates from the vacuumlabs/presale-template repository
 ---
 
 # Sync template schema
 
-Pulls the latest schema-layer updates (hooks, slash commands, subagents, routing docs, merge drivers) from `vacuumlabs/project-template` into this repo. **Wiki content is never touched** — `client-inputs/`, `team-inputs/`, wiki folders, `log.md`, `index.md`, `decisions.md`, `contradictions.md`, and `.claude/settings.local.json` are all preserved as-is.
+Pulls the latest schema-layer updates (hooks, slash commands, subagents, routing docs, merge drivers) from `vacuumlabs/presale-template` into this repo. **Wiki content is never touched** — `client-inputs/`, `team-inputs/`, wiki folders, `log.md`, `index.md`, `decisions.md`, `contradictions.md`, and `.claude/settings.local.json` are all preserved as-is.
 
 Follow this workflow exactly. Do not skip steps.
 
