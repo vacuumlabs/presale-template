@@ -113,7 +113,7 @@ This repo is also the canonical **Vacuumlabs presale template**. For presale eng
 
 **Confluence:** [V2 Presale SDLC Overview](https://vacuum.atlassian.net/wiki/spaces/Engineerin/pages/3298721855/V2+Presale+SDLC+Overview) for the process narrative (stages, gates, templates as humans see them). [V2 Tooling — Presale Template Repo](https://vacuum.atlassian.net/wiki/spaces/Engineerin/pages/3364356100/V2+Tooling+Presale+Template+Repo) is the entry point that explains the repo + tooling division of responsibility.
 
-**AI assistance:** Ask the `vacuumlabs-presale-guide` skill (from the [`superpowers`](https://github.com/anthropics/claude-plugins-official) plugin marketplace — install via `/plugin marketplace add anthropics/claude-plugins-official` then `/plugin install superpowers@claude-plugins-official`) for stage-by-stage and role-by-role guidance.
+**AI assistance:** Ask the `vacuumlabs-presale-guide` skill for stage-by-stage and role-by-role guidance. The skill is bundled in this repo — see `SETUP.md` for the one-time install step.
 
 ### Sales (presale only)
 

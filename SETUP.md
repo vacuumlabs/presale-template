@@ -30,17 +30,6 @@ Copy-Item .claude\skills\vacuumlabs-presale-guide.skill "$env:USERPROFILE\.claud
 
 Restart Claude Code after copying. Once installed, Claude Code automatically invokes the skill when you ask process questions about the presale.
 
-### Superpowers plugin (recommended)
-
-Superpowers adds general engineering skills (brainstorming, systematic debugging, TDD, code review) that work alongside the presale commands. Install it once via Claude Code:
-
-```
-/plugin marketplace add anthropics/claude-plugins-official
-/plugin install superpowers@claude-plugins-official
-```
-
-Both steps require an active internet connection. The plugin persists across all your projects — install it once and it's always available.
-
 ## 3. Passwordless GitHub access (one-time per laptop)
 
 Takes about five minutes. Ask Claude Code for each step — **follow Claude's instructions as they appear, then come back here for the next step**:
