@@ -3,3 +3,6 @@
 
 # Claude Code local settings (machine-specific permissions and paths)
 .claude/settings.local.json
+
+# Skill source directories — the .skill ZIP is the canonical artifact
+.claude/skills/*/
