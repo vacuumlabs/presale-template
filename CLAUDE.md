@@ -1,12 +1,12 @@
 # Claude Instructions
 
-This repo is a **Vacuumlabs presale engagement** running the V2 presale SDLC. For process guidance, invoke the `vacuumlabs-presale-guide` skill — it knows the V2 stage map, gates, templates, and slash commands.
+This repo is a **Vacuumlabs engagement wiki** — it may cover presale, discovery, delivery, or the full lifecycle of a client engagement. Before answering any question about this engagement, read [index.md](index.md) and follow the routing and conventions in [AGENTS.md](AGENTS.md).
 
-Before answering any question about this engagement, read [index.md](index.md) and follow the routing and conventions in [AGENTS.md](AGENTS.md).
+For presale guidance, invoke the `vacuumlabs-presale-guide` skill — it knows the stage map, gates, templates, and slash commands.
 
 ## Presale slash commands
 
-Slash commands drive each stage of the presale. Run them inside this repo.
+If this repo is running a presale engagement, slash commands drive each stage. Run them inside this repo.
 
 | Stage | Command | When |
 |-------|---------|------|
