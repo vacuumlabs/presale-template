@@ -2,7 +2,7 @@
 
 _Complete this before the intake call. This is the minimum information needed to start a presale. If you cannot complete a field, write "Unknown" — do not leave it blank._
 
-**Usage:** Copy this file to `team-inputs/T1-sales-deal-brief.md` and fill it in. Run `/ingest team-inputs/T1-sales-deal-brief.md` to integrate it into the wiki.
+**Usage:** Fill in this file directly before the intake call. When complete, run `/p1`.
 
 ---
 

@@ -2,7 +2,7 @@
 
 _Used during the discovery phase (Stage 3). Can be sent to the client in advance of a workshop, filled in async, or used as a structured agenda for the discovery call. Add answers during and after calls — rough notes are fine._
 
-**Usage:** Copy this file to `team-inputs/T2-discovery-qa.md` and fill it in. Run `/ingest team-inputs/T2-discovery-qa.md` after each call, even with partial answers.
+**Usage:** Fill in this file during or after discovery calls. When sufficiently complete, run `/p3`.
 
 **Client:** \__________\_
 **Date started:** \__________\_

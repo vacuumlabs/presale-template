@@ -7,15 +7,15 @@ argument-hint: (no arguments needed)
 
 Capture the deal outcome in a structured format that feeds Vacuumlabs' knowledge base. Every closed deal is a learning opportunity.
 
-**Run the post-mortem call with the presale team before running this command.** P9 synthesises the team's collective memory — it cannot substitute for it. Fill in `team-inputs/T6-postmortem-call.md` during or immediately after the call, then run `/ingest team-inputs/T6-postmortem-call.md` before running P9.
+**Run the post-mortem call with the presale team before running this command.** P9 synthesises the team's collective memory — it cannot substitute for it. Fill in `project-management/postmortem-call.md` during or immediately after the call, then run `/p9`.
 
 ## 0. Check required inputs
 
 Check that the following exist (read `index.md` to verify):
-- `team-inputs/T6-postmortem-call.md` — filled in during/after the post-mortem call
+- `project-management/postmortem-call.md` — filled in during/after the post-mortem call
 - Core project context is in the wiki (at minimum: problem statement, estimation-final.md, proposal draft)
 
-If T6 is missing or empty, stop: "P9 requires completed post-mortem call notes. Fill in `team-inputs/T6-postmortem-call.md` and run `/ingest team-inputs/T6-postmortem-call.md`, then run `/p9`."
+If T6 is missing or empty, stop: "P9 requires completed post-mortem call notes. Fill in `project-management/postmortem-call.md`, then run `/p9`."
 
 ## 1. Produce _deal-outcome.md
 
@@ -103,7 +103,7 @@ type: status
 title: Deal outcome — <client name>
 tags: [deal-outcome, debrief, P9]
 sources:
-  - team-inputs/T6-postmortem-call.md
+  - project-management/postmortem-call.md
 last_updated: <today>
 status: active
 ---

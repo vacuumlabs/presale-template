@@ -10,9 +10,9 @@ Slash commands drive each stage of the presale. Run them inside this repo.
 
 | Stage | Command | When |
 |-------|---------|------|
-| Deal Intake | `/p1` | After T1 brief is in team-inputs/ |
+| Deal Intake | `/p1` | After T1 filled in at deal-context/sales-deal-brief.md |
 | Domain Research | `/p2` | After G1, before first client call |
-| Problem Framing | `/p3` | After discovery call, T2 in team-inputs/ |
+| Problem Framing | `/p3` | After discovery call, T2 filled in at deal-context/discovery-qa.md |
 | Business Architecture | `/p3e` | After P3d, before G2 (T2/T3) |
 | Sales Strategy Alignment | `/p3f prepare` or `/p3f document` | After P3e, before G2 (T2/T3) |
 | Technical Architecture | `/p4` | After G2, all P3 + T7 outputs in wiki |
@@ -20,7 +20,7 @@ Slash commands drive each stage of the presale. Run them inside this repo.
 | ARB Review | `/p6` | After P4 + P5, before ARB session |
 | Proposal Assembly | `/p7` | After G3 (or ARB waived) |
 | Quality Check | `/p8 sa` and `/p8 pm` | After P7, before G4 |
-| Win/Loss Debrief | `/p9` | After deal closes, T6 in team-inputs/ |
+| Win/Loss Debrief | `/p9` | After deal closes, T6 filled in at project-management/postmortem-call.md |
 
 If a command stops because an input is missing, it will tell you exactly what to add before re-running.
 

@@ -121,10 +121,9 @@ This repo is also the canonical **Vacuumlabs presale template**. For presale eng
 
 **How to start:**
 
-1. Copy `templates/T1-sales-deal-brief.md` → `team-inputs/T1-sales-deal-brief.md`
-2. Fill in — especially the budget signal (Hard / Soft / Unknown)
-3. Drag the filled file into Claude Code and ingest it
-4. Then `/p1` kicks off the intake
+1. Open `deal-context/sales-deal-brief.md` in the repo — it is already there, blank
+2. Fill it in — especially the budget signal (Hard / Soft / Unknown)
+3. Run `/p1` to kick off the intake
 
 **Your critical input:** the budget signal. All solutioning works backwards from this. If you can't get a Hard or Soft signal, say so in T1 — the process has a Lean / Standard / Full three-option path for Unknown. What it cannot handle is silence.
 
@@ -134,9 +133,9 @@ Each presale stage has a slash command. Run inside the engagement repo — the c
 
 | Stage | Command | Required inputs in wiki |
 |---|---|---|
-| Deal Intake | `/p1` | T1 in `team-inputs/` |
+| Deal Intake | `/p1` | `deal-context/sales-deal-brief.md` filled in |
 | Domain Research | `/p2` | P1 outputs in `deal-context/` |
-| Problem Framing | `/p3` | T2 in `team-inputs/`, P2 outputs |
+| Problem Framing | `/p3` | `deal-context/discovery-qa.md` filled in, P2 outputs |
 | Business Architecture | `/p3e` | P3a–P3d outputs |
 | Sales Strategy Alignment | `/p3f prepare` → call → `/p3f document` | P3e + P2c outputs |
 | Technical Architecture | `/p4` | P3a–P3e + T7 outputs |
@@ -144,7 +143,7 @@ Each presale stage has a slash command. Run inside the engagement repo — the c
 | ARB Submission | `/p6` | P4 + P5 outputs; fetches canonical ARB template from Confluence at runtime |
 | Proposal Assembly | `/p7` | All P1–P5 + P3e outputs |
 | Quality Check | `/p8 sa` and `/p8 pm` | Proposal draft |
-| Win/Loss Debrief | `/p9` | T6 in `team-inputs/` |
+| Win/Loss Debrief | `/p9` | `project-management/postmortem-call.md` filled in |
 
 If a command stops because an input is missing, it tells you exactly which file to add before re-running.
 

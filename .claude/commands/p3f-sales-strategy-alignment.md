@@ -113,15 +113,12 @@ type: concept
 title: Sales strategy alignment — <client name>
 tags: [sales, strategy, positioning, T7, P3f]
 sources:
-  - ../team-inputs/T7-sales-strategy-alignment.md
   - product-management/competitive-positioning.md
   - product-management/problem-statement.md
 last_updated: <today>
 status: active
 ---
 ```
-
-Also update (or create) `team-inputs/T7-sales-strategy-alignment.md` with the same content in T7 template format — this is the team-authored primary document; the wiki page is the synthesis.
 
 ### 3. Update indexes
 

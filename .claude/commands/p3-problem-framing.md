@@ -12,12 +12,12 @@ Produce four outputs that give a complete picture of the client's business probl
 ## 0. Check required inputs
 
 Check that the following exist (read `index.md` to verify):
-- `team-inputs/T2-discovery-qa.md` — filled in during/after the discovery call
+- `deal-context/discovery-qa.md` — filled in during/after the discovery call
 - `product-management/domain-research.md` — from P2
 - `product-management/regulatory-brief.md` — from P2
 - Budget signal in T1 brief is confirmed or escalated
 
-If T2 is missing or empty, stop: "P3 needs discovery call notes. Fill in `team-inputs/T2-discovery-qa.md` and run `/ingest team-inputs/T2-discovery-qa.md`, then run `/p3`."
+If T2 is missing or empty, stop: "P3 needs discovery call notes. Fill in `deal-context/discovery-qa.md`, then run `/p3`."
 
 If budget signal is still Unknown, note it prominently: this does not block P3, but P4 cannot begin without resolving it.
 
@@ -50,7 +50,7 @@ type: concept
 title: Problem statement — <client name>
 tags: [problem, discovery, P3]
 sources:
-  - ../team-inputs/T2-discovery-qa.md
+  - ../deal-context/discovery-qa.md
   - ../product-management/domain-research.md
 last_updated: <today>
 status: draft
@@ -82,7 +82,7 @@ type: concept
 title: Capabilities map — <client name>
 tags: [capabilities, architecture, P3]
 sources:
-  - ../team-inputs/T2-discovery-qa.md
+  - ../deal-context/discovery-qa.md
   - product-management/problem-statement.md
 last_updated: <today>
 status: draft
@@ -118,7 +118,7 @@ type: concept
 title: In-scope flows — <client name>
 tags: [scope, flows, P3]
 sources:
-  - ../team-inputs/T2-discovery-qa.md
+  - ../deal-context/discovery-qa.md
   - product-management/problem-statement.md
   - product-management/capabilities-map.md
 last_updated: <today>

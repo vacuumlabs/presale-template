@@ -1,5 +1,7 @@
 # T4 — Deal Outcome: {Client Name}
 
+_Fill in via `/p9` after the post-mortem call. This file is the blank template until then._
+
 _Save this file as `_deal-outcome.md` at the root of the engagement repo and in the client's GDrive deal folder. Also copy it to the VL knowledge base folder (GDrive ID: `160UcArBo0aG6eLHWwVkN8ZVrWLl9sdbv`). This file is the primary input future presale teams will use when running the VL asset scan for similar engagements._
 
 _Run `/p9` to generate a first draft of this document. P9 requires the completed post-mortem call notes (T6) as input — run the post-mortem call first._

@@ -5,21 +5,21 @@ argument-hint: (no arguments needed)
 
 # P1 — Deal Intake
 
-This command runs immediately after a T1 Sales Deal Brief lands in `team-inputs/`. It produces four wiki pages that set the team up for the first client interaction: a structured gap analysis, a similar-deals lookup, a soft go/no-go flag list, and a consolidated pre-meeting brief.
+This command runs once the T1 Sales Deal Brief at `deal-context/sales-deal-brief.md` has been filled in. It produces four wiki pages that set the team up for the first client interaction: a structured gap analysis, a similar-deals lookup, a soft go/no-go flag list, and a consolidated pre-meeting brief.
 
 Follow all steps in order. Do not skip any.
 
 ## 0. Check required input
 
-Look for `team-inputs/T1-sales-deal-brief.md`. If it is not there, stop immediately and tell the user:
+Look for `deal-context/sales-deal-brief.md`. If it is not there, stop immediately and tell the user:
 
-> **P1 cannot run yet.** Copy `templates/T1-sales-deal-brief.md` to `team-inputs/T1-sales-deal-brief.md`, fill it in, then run `/p1` again.
+> **P1 cannot run yet.** `deal-context/sales-deal-brief.md` is missing. Re-clone from the template or restore the file, fill it in, then run `/p1` again.
 
 If the file exists but `## Deal Name` is blank or all fields are empty, stop and tell the user the T1 brief is incomplete.
 
 ## 1. Read and internalise the T1 brief
 
-Read `team-inputs/T1-sales-deal-brief.md` in full.
+Read `deal-context/sales-deal-brief.md` in full.
 
 Extract and hold in working context:
 - Client name and engagement tier (T1 / T2 / T3)
@@ -33,7 +33,7 @@ Extract and hold in working context:
 
 If the budget signal field is blank or not one of Hard / Soft / Unknown, flag it prominently in your output:
 
-> **Budget signal missing.** Sales must supply this before the intake call — it drives all solutioning. Ask the deal owner to update T1 and re-run `/ingest team-inputs/T1-sales-deal-brief.md`.
+> **Budget signal missing.** Sales must supply this before the intake call — it drives all solutioning. Ask the deal owner to update `deal-context/sales-deal-brief.md` directly.
 
 ## 2. Produce deal-context/intake-gaps.md
 
@@ -47,7 +47,7 @@ type: concept
 title: Intake gap analysis — <client name>
 tags: [intake, gaps, T1]
 sources:
-  - ../team-inputs/T1-sales-deal-brief.md
+  - ../deal-context/sales-deal-brief.md
 last_updated: <today>
 status: draft
 ---
@@ -84,7 +84,7 @@ type: concept
 title: Similar past deals — <client name>
 tags: [intake, benchmarks, past-deals]
 sources:
-  - ../team-inputs/T1-sales-deal-brief.md
+  - ../deal-context/sales-deal-brief.md
 last_updated: <today>
 status: draft
 ---
@@ -106,7 +106,7 @@ type: concept
 title: Go/no-go flags — <client name>
 tags: [intake, go-no-go, G1]
 sources:
-  - ../team-inputs/T1-sales-deal-brief.md
+  - ../deal-context/sales-deal-brief.md
 last_updated: <today>
 status: draft
 ---
@@ -145,7 +145,7 @@ type: concept
 title: Pre-meeting brief — <client name>
 tags: [intake, pre-meeting]
 sources:
-  - ../team-inputs/T1-sales-deal-brief.md
+  - ../deal-context/sales-deal-brief.md
   - deal-context/intake-gaps.md
   - deal-context/similar-deals.md
   - deal-context/go-no-go-flags.md
@@ -193,6 +193,6 @@ Tell the user:
 - The top three open questions from `intake-gaps.md`
 - The most important go/no-go flag (if any red or amber flags exist)
 - Whether similar past deals were found (and how many)
-- What to do next: "Review `pre-meeting-brief.md` before your first call. If anything is wrong or incomplete in `intake-gaps.md`, fix it in `team-inputs/T1-sales-deal-brief.md` and re-run `/ingest` to update. Run `/p2` after Domain Research is kicked off."
+- What to do next: "Review `pre-meeting-brief.md` before your first call. If anything is wrong or incomplete in `intake-gaps.md`, update `deal-context/sales-deal-brief.md` directly and re-run `/p1`. Run `/p2` after Domain Research is kicked off."
 
 Changes are committed and pushed automatically when this turn ends.

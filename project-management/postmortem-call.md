@@ -2,7 +2,7 @@
 
 Fill this in during or immediately after the post-mortem call. It becomes the primary input to P9 (Win/Loss Debrief). Whoever runs P9 pastes this into the session.
 
-**Usage:** Copy this file to `team-inputs/T6-postmortem-call.md` and fill it in. Run `/ingest team-inputs/T6-postmortem-call.md` to integrate it into the wiki, then run `/p9` to generate the deal outcome document.
+**Usage:** Fill in this file during or immediately after the post-mortem call. When complete, run `/p9`.
 
 **Attendees:** SA, PM, Sales (minimum).
 **When:** As soon as possible after the deal closes — within 1 week.
@@ -101,4 +101,4 @@ Did this presale produce anything usable as a future reference or case study?
 
 ---
 
-_Once complete, pass this document to the PM to run `/p9`._
+_Once complete, run `/p9` to generate the deal outcome document._

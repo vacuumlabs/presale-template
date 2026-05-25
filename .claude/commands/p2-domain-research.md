@@ -13,7 +13,7 @@ Follow all steps in order.
 
 Check that the following exist in the wiki (read `index.md` to verify):
 - `deal-context/` contains intake outputs from P1 (pre-meeting brief, intake gaps)
-- `team-inputs/T1-sales-deal-brief.md` exists and is filled in
+- `deal-context/sales-deal-brief.md` exists and is filled in
 
 If either is missing, stop and tell the user exactly what to run first.
 
@@ -39,7 +39,7 @@ type: concept
 title: Domain research — <client name>
 tags: [domain, research, P2]
 sources:
-  - ../team-inputs/T1-sales-deal-brief.md
+  - ../deal-context/sales-deal-brief.md
 last_updated: <today>
 status: draft
 ---
@@ -67,7 +67,7 @@ type: concept
 title: Regulatory brief — <client name>
 tags: [regulatory, compliance, P2]
 sources:
-  - ../team-inputs/T1-sales-deal-brief.md
+  - ../deal-context/sales-deal-brief.md
   - product-management/domain-research.md
 last_updated: <today>
 status: draft
@@ -96,7 +96,7 @@ type: concept
 title: Competitive positioning — <client name>
 tags: [competitive, positioning, P2]
 sources:
-  - ../team-inputs/T1-sales-deal-brief.md
+  - ../deal-context/sales-deal-brief.md
   - product-management/domain-research.md
   - product-management/regulatory-brief.md
 last_updated: <today>

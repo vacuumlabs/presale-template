@@ -115,8 +115,12 @@ This template is used exclusively for presale engagements. Additional routing ru
 | Quality check reports | `project-management/quality-checks/` |
 | ARB submissions | `technical-architecture/arb-records/` |
 | Deal outcome | `_deal-outcome.md` at repo root |
+| T1 Sales Deal Brief (fill in before /p1) | `deal-context/sales-deal-brief.md` |
+| T2 Discovery Q&A (fill in before /p3) | `deal-context/discovery-qa.md` |
+| T6 Post-Mortem Call (fill in before /p9) | `project-management/postmortem-call.md` |
+| T7 Sales Strategy Alignment (p3f fills in) | `deal-context/sales-strategy-alignment.md` |
 
-**Schema-layer files** — `templates/T1–T7.md` are reference templates, never edited per-engagement. Copy to `team-inputs/` before filling in.
+**Process templates** — T1 (`deal-context/sales-deal-brief.md`), T2 (`deal-context/discovery-qa.md`), T6 (`project-management/postmortem-call.md`), T7 (`deal-context/sales-strategy-alignment.md`), and T4 (`_deal-outcome.md`) are pre-seeded blank forms. Fill them in-place; no copying needed. T5 (`templates/T5-proposal-document.md`) is a GDoc reference only.
 
 **Knowledge base access** — P1b (similar deals) and P4a (VL assets) search past deal outcomes in GDrive folder ID `160UcArBo0aG6eLHWwVkN8ZVrWLl9sdbv` using the Google Drive MCP. If GDrive MCP is unavailable, create the wiki page with a placeholder and note what needs manual population.
 

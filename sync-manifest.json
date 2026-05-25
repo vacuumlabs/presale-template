@@ -1,6 +1,6 @@
 {
-  "version": "1.10.0",
-  "updated": "2026-05-20",
+  "version": "1.11.0",
+  "updated": "2026-05-25",
   "template_repo": "vacuumlabs/presale-template",
   "template_branch": "master",
   "files": [
@@ -31,13 +31,13 @@
     ".claude/agents/synthesiser.md",
     ".claude/skills/vacuumlabs-presale-guide.skill",
     ".claude/skills/vl-proposal-doc.skill",
-    "templates/T1-sales-deal-brief.md",
-    "templates/T2-discovery-qa.md",
-    "templates/T4-deal-outcome.md",
     "templates/T5-proposal-document.md",
-    "templates/T6-postmortem-call.md",
-    "templates/T7-sales-strategy-alignment.md",
-    "templates/README.md"
+    "templates/README.md",
+    "deal-context/sales-deal-brief.md",
+    "deal-context/discovery-qa.md",
+    "deal-context/sales-strategy-alignment.md",
+    "project-management/postmortem-call.md",
+    "_deal-outcome.md"
   ],
   "external_tools": [
     {

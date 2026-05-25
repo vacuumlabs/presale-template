@@ -6,7 +6,7 @@
 
 **Format:** 30-minute alignment call. Sales + CDO + PM. SA optional (invited if feasibility input needed).
 
-**Usage:** Copy this file to `team-inputs/T7-sales-strategy-alignment.md`. Run `/p3f prepare` to generate a meeting agenda before the call. After the call, run `/p3f document` with your call notes to fill in this template. Then run `/ingest team-inputs/T7-sales-strategy-alignment.md`.
+**Usage:** This file is pre-seeded. Run `/p3f prepare` to generate the call agenda. After the call, run `/p3f document` to fill in this file with the agreed positioning.
 
 **Required before this call:**
 
@@ -130,7 +130,3 @@ Do we think paid discovery is needed before committing to full delivery scope?
 | Sales |  | Yes / No |
 | CDO |  | Yes / No |
 | PM |  | Yes / No |
-
----
-
-_After completing: commit as `team-inputs/T7-sales-strategy-alignment.md` and run `/ingest team-inputs/T7-sales-strategy-alignment.md` to create `deal-context/sales-strategy-alignment.md` in the wiki._

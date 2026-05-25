@@ -19,7 +19,7 @@ Check that the following exist (read `index.md` to verify):
 
 If any are missing, stop and list what must be created first.
 
-Also read T2 (`team-inputs/T2-discovery-qa.md`) Section 6 ("Operating Model & Success") — questions 22–25 are the primary raw material for this analysis.
+Also read T2 (`deal-context/discovery-qa.md` — Section 6 "Operating Model & Success") — questions 22–25 are the primary raw material for this analysis.
 
 ## 1. Stakeholders and actors
 
@@ -122,7 +122,7 @@ type: concept
 title: Business architecture — <client name>
 tags: [business-architecture, RACI, value-streams, P3e]
 sources:
-  - ../team-inputs/T2-discovery-qa.md
+  - ../deal-context/discovery-qa.md
   - product-management/problem-statement.md
   - product-management/capabilities-map.md
   - product-management/in-scope-flows.md
