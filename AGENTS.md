@@ -97,9 +97,9 @@ Optional automations users may add (see the root README):
 - A weekly scheduled `/lint` job.
 - MCP-backed ingest variants that pull from Slack / Gmail / Jira / Confluence / GDrive into `client-inputs/` or `team-inputs/`.
 
-## Presale-specific routing notes
+## Presale routing notes
 
-This template is used exclusively for presale engagements. Additional routing rules:
+This template is used across presale, discovery, and delivery engagements. When the repo is running a presale, the following additional routing rules apply:
 
 | Content type | Where it goes |
 |-------------|---------------|
